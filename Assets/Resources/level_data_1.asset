@@ -14,3 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene_index: 1
   scene_overrideAsActiveScene: 0
+  data_gunColor_percentage_array:
+  - data_percentage: 50
+    data: {fileID: 11400000, guid: 87ea8538458e845fdab0b1a1d7abcb22, type: 2}
+  - data_percentage: 50
+    data: {fileID: 11400000, guid: 87ea8538458e845fdab0b1a1d7abcb22, type: 2}
+  data_gun_percentage_array:
+  - data_percentage: 100
+    data: {fileID: 11400000, guid: 346d2b355d9194899bac436ad6d4d372, type: 2}

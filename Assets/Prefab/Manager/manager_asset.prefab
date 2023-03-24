@@ -29,7 +29,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1449544025859855003}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -101,3 +102,273 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &7611339477055680766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1449544025859855003}
+  - component: {fileID: 6693157931801519923}
+  m_Layer: 0
+  m_Name: logic_system_selection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1449544025859855003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611339477055680766}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4364745634903858525}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6693157931801519923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611339477055680766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa1f021c399944afb705e81a336c658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respond_data_array:
+  - rid: 5382517894149046277
+  - rid: 5382517894149046278
+  - rid: 5382517894149046279
+  - rid: 5382517894149046280
+  - rid: 5382517894149046281
+  - rid: 5382517894149046282
+  references:
+    version: 2
+    RefIds:
+    - rid: 5382517894149046277
+      type: {class: BasicGameEventResponse, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        isEnabled: 1
+        isDelayed: 0
+        delayDuration: 0
+        gameEvent: {fileID: 11400000, guid: efef06bf257ee27438d6c2aab4936226, type: 2}
+        unityEvent:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 6693157931801519923}
+              m_TargetAssemblyTypeName: FFStudio.RespondAdvanced, Assembly-CSharp
+              m_MethodName: EnableRespond
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 3
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+            - m_Target: {fileID: 6693157931801519923}
+              m_TargetAssemblyTypeName: FFStudio.RespondAdvanced, Assembly-CSharp
+              m_MethodName: EnableRespond
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 5
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+    - rid: 5382517894149046278
+      type: {class: BasicGameEventResponse, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        isEnabled: 1
+        isDelayed: 0
+        delayDuration: 0
+        gameEvent: {fileID: 11400000, guid: 28d976b368abc004a924d98b1751a17d, type: 2}
+        unityEvent:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 6693157931801519923}
+              m_TargetAssemblyTypeName: FFStudio.RespondAdvanced, Assembly-CSharp
+              m_MethodName: DisableRespond
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 3
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+            - m_Target: {fileID: 6693157931801519923}
+              m_TargetAssemblyTypeName: FFStudio.RespondAdvanced, Assembly-CSharp
+              m_MethodName: DisableRespond
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 4
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+            - m_Target: {fileID: 6693157931801519923}
+              m_TargetAssemblyTypeName: FFStudio.RespondAdvanced, Assembly-CSharp
+              m_MethodName: DisableRespond
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 5
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+    - rid: 5382517894149046279
+      type: {class: BasicGameEventResponse, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        isEnabled: 1
+        isDelayed: 0
+        delayDuration: 0
+        gameEvent: {fileID: 11400000, guid: ec850936269bc2e47b26cfebd8bdad97, type: 2}
+        unityEvent:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 6693157931801519923}
+              m_TargetAssemblyTypeName: FFStudio.RespondAdvanced, Assembly-CSharp
+              m_MethodName: DisableRespond
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 3
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+            - m_Target: {fileID: 6693157931801519923}
+              m_TargetAssemblyTypeName: FFStudio.RespondAdvanced, Assembly-CSharp
+              m_MethodName: DisableRespond
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 4
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+            - m_Target: {fileID: 6693157931801519923}
+              m_TargetAssemblyTypeName: FFStudio.RespondAdvanced, Assembly-CSharp
+              m_MethodName: DisableRespond
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 5
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+    - rid: 5382517894149046280
+      type: {class: Vector2GameEventResponse, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        isEnabled: 0
+        isDelayed: 0
+        delayDuration: 0
+        gameEvent: {fileID: 11400000, guid: e44b4684f0a884500aca7c0a0e1e7719, type: 2}
+        unityEvent:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 11400000, guid: 518513f15cf2b4ab88ec66d27110fbf4, type: 2}
+              m_TargetAssemblyTypeName: SystemSelection, Assembly-CSharp
+              m_MethodName: OnFingerUpdate
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+            - m_Target: {fileID: 6693157931801519923}
+              m_TargetAssemblyTypeName: FFStudio.RespondAdvanced, Assembly-CSharp
+              m_MethodName: EnableRespond
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 4
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+    - rid: 5382517894149046281
+      type: {class: Vector2GameEventResponse, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        isEnabled: 0
+        isDelayed: 0
+        delayDuration: 0
+        gameEvent: {fileID: 11400000, guid: 1dc0d088320704d3d8a6bcb104fb09fa, type: 2}
+        unityEvent:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 11400000, guid: 518513f15cf2b4ab88ec66d27110fbf4, type: 2}
+              m_TargetAssemblyTypeName: SystemSelection, Assembly-CSharp
+              m_MethodName: OnFingerUpdate
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+    - rid: 5382517894149046282
+      type: {class: Vector2GameEventResponse, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        isEnabled: 0
+        isDelayed: 0
+        delayDuration: 0
+        gameEvent: {fileID: 11400000, guid: 0319569f300b14f599866f2b50df6392, type: 2}
+        unityEvent:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 11400000, guid: 518513f15cf2b4ab88ec66d27110fbf4, type: 2}
+              m_TargetAssemblyTypeName: SystemSelection, Assembly-CSharp
+              m_MethodName: OnFingerUp
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+            - m_Target: {fileID: 6693157931801519923}
+              m_TargetAssemblyTypeName: FFStudio.RespondAdvanced, Assembly-CSharp
+              m_MethodName: DisableRespond
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 4
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2

@@ -12,7 +12,11 @@ public class SystemSelection : ScriptableObject
 #region Fields
   [ Title( "Shared" ) ]
     [ SerializeField ] SharedReferenceNotifier notif_camera_reference;
-    Camera _camera;
+    [ SerializeField ] RaycastHitGameEvent event_selection_gun;
+    [ SerializeField ] RaycastHitGameEvent event_selection_ground;
+
+	Vector2Delegate onFinger;
+	Camera _camera;
 #endregion
 
 #region Properties
@@ -25,11 +29,44 @@ public class SystemSelection : ScriptableObject
     public void OnLevelStart()
     {
         _camera = ( notif_camera_reference.sharedValue as Transform ).GetComponent< Camera >();
-    }
+
+		onFinger = FingerDown;
+	}
+
+	public void OnFingerUpdate( Vector2 screenPosition )
+	{
+		onFinger( screenPosition );
+	}
+
+	public void OnFingerUp()
+	{
+		onFinger = FingerDown;
+	}
 #endregion
 
 #region Implementation
-    void TryToSelect( Vector2 screenPosition ) // %100 hit rate
+	void FingerDown( Vector2 screenPosition )
+	{
+		var hit = TryToSelect( screenPosition );
+
+		if( hit.collider.tag == "Gun" )
+		{
+			event_selection_gun.Raise( hit.point, hit.collider );
+			onFinger = FingerUpdate;
+		}
+	}
+
+	void FingerUpdate( Vector2 screenPosition )
+	{
+		var hit = TryToSelect( screenPosition );
+
+		if( hit.collider.tag == "Gun" )
+			event_selection_gun.Raise( hit.point, hit.collider );
+		else
+			event_selection_ground.Raise( hit.point, hit.collider );
+	}
+
+    RaycastHit TryToSelect( Vector2 screenPosition ) // %100 hit rate
     {
 		var worldPositionNear = _camera.ScreenToWorldPoint( screenPosition.ConvertToVector3( _camera.nearClipPlane ) );
 		var worldPositionFar  = _camera.ScreenToWorldPoint( screenPosition.ConvertToVector3( _camera.farClipPlane ) );
@@ -46,6 +83,8 @@ public class SystemSelection : ScriptableObject
 			GameSettings.Instance.selection_delta,
             layerMask
         );
+
+		return hitInfo;
 	}
 #endregion
 

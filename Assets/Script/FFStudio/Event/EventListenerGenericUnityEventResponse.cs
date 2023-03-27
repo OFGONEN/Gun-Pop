@@ -99,6 +99,14 @@ namespace FFStudio
 		}
 	}
 
+	public class RaycastHitGameEventResponse : GenericEventListenerGenericUnityEventResponse< RaycastHitGameEvent, RaycastHitData >
+	{
+		protected override void OnEventResponse()
+		{
+			unityEvent.Invoke( gameEvent.event_data );
+		}
+	}
+
 	public class ReferenceGameEventResponse : GenericEventListenerGenericUnityEventResponse< ReferenceGameEvent, object >
 	{
 		protected override void OnEventResponse()

@@ -9,8 +9,7 @@ using FFStudio;
 public class RaycastHitGameEvent : GameEvent
 {
 #region Fields
-    public Vector3 hit_position;
-    public Collider hit_collider;
+    public RaycastHitData event_data;
 #endregion
 
 #region Properties
@@ -22,8 +21,10 @@ public class RaycastHitGameEvent : GameEvent
 #region API
     public void Raise( Vector3 position, Collider collider )
     {
-		hit_position = position;
-		hit_collider = collider;
+		event_data.hit_position = position;
+		event_data.hit_collider = collider;
+
+		Raise();
 	}
 #endregion
 
@@ -34,4 +35,11 @@ public class RaycastHitGameEvent : GameEvent
 #if UNITY_EDITOR
 #endif
 #endregion
+}
+
+[ System.Serializable ]
+public struct RaycastHitData
+{
+	public Vector3 hit_position;
+	public Collider hit_collider;
 }

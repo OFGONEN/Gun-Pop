@@ -12,8 +12,8 @@ public class Gun : MonoBehaviour
 #endregion
 
 #region Properties
-    public GunVisualData GunColorData => gun_color_data;
-    public GunData GunData           => gun_data;
+    public GunVisualData GunVisualData => gun_color_data;
+    public GunData GunData             => gun_data;
 #endregion
 
 #region Unity API

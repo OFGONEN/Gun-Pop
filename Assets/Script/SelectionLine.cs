@@ -37,7 +37,7 @@ public class SelectionLine : MonoBehaviour
 		_lineRenderer.End = position;
 	}
 
-    public void OnDeSpawnLine()
+    public void Despawn()
     {
 		pool_selection_line.ReturnEntity( this );
 	}

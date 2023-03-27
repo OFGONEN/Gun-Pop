@@ -7,9 +7,13 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
 #region Fields
+    GunData gun_data;
+    GunColorData gun_color_data;
 #endregion
 
 #region Properties
+    public GunColorData GunColorData => gun_color_data;
+    public GunData GunData           => gun_data;
 #endregion
 
 #region Unity API

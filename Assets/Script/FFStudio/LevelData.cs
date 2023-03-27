@@ -39,7 +39,7 @@ namespace FFStudio
 public struct DataPercentageGunColorData
 {
 	public int data_percentage;
-	public GunColorData data;
+	public GunVisualData data;
 }
 
 [ System.Serializable ]

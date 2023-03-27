@@ -8,11 +8,11 @@ public class Gun : MonoBehaviour
 {
 #region Fields
     GunData gun_data;
-    GunColorData gun_color_data;
+    GunVisualData gun_color_data;
 #endregion
 
 #region Properties
-    public GunColorData GunColorData => gun_color_data;
+    public GunVisualData GunColorData => gun_color_data;
     public GunData GunData           => gun_data;
 #endregion
 

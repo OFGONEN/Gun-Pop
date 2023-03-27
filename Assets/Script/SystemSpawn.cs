@@ -20,10 +20,10 @@ public class SystemSpawn : ScriptableObject
 
 #region API
     [ Button() ]
-    public ( GunData, GunColorData ) GetSpawnData()
+    public ( GunData, GunVisualData ) GetSpawnData()
     {
 		GunData      gun_data       = null;
-		GunColorData gun_color_data = null;
+		GunVisualData gun_color_data = null;
 
 		var randomColorData = Random.Range( 0, 100 );
 		var randomData      = Random.Range( 0, 100 );

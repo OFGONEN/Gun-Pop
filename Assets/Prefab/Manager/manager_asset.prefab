@@ -31,6 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1449544025859855003}
+  - {fileID: 433917231798761079}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52,6 +53,18 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: 07c56239588814c1996e673febff6634, type: 2}
         m_TargetAssemblyTypeName: FFStudio.SaveSystem, Assembly-CSharp
         m_MethodName: Initialize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 167edb1fdc534a042b2fc73eea62d694, type: 2}
+        m_TargetAssemblyTypeName: SystemSelectionLine, Assembly-CSharp
+        m_MethodName: Init
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -368,6 +381,123 @@ MonoBehaviour:
                 m_ObjectArgument: {fileID: 0}
                 m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
                 m_IntArgument: 4
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+--- !u!1 &8928136998937000246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 433917231798761079}
+  - component: {fileID: 7205835671403926131}
+  m_Layer: 0
+  m_Name: logic_system_selection_line
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &433917231798761079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928136998937000246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4364745634903858525}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7205835671403926131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928136998937000246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa1f021c399944afb705e81a336c658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respond_data_array:
+  - rid: 248524334184792064
+  - rid: 248524334184792065
+  - rid: 248524334184792066
+  references:
+    version: 2
+    RefIds:
+    - rid: 248524334184792064
+      type: {class: BasicGameEventResponse, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        isEnabled: 1
+        isDelayed: 0
+        delayDuration: 0
+        gameEvent: {fileID: 11400000, guid: 0319569f300b14f599866f2b50df6392, type: 2}
+        unityEvent:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 11400000, guid: 167edb1fdc534a042b2fc73eea62d694, type: 2}
+              m_TargetAssemblyTypeName: SystemSelectionLine, Assembly-CSharp
+              m_MethodName: OnFingerUp
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+    - rid: 248524334184792065
+      type: {class: RaycastHitGameEventResponse, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        isEnabled: 1
+        isDelayed: 0
+        delayDuration: 0
+        gameEvent: {fileID: 11400000, guid: e21d51a1e4d75404396178d48f992f8f, type: 2}
+        unityEvent:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 11400000, guid: 167edb1fdc534a042b2fc73eea62d694, type: 2}
+              m_TargetAssemblyTypeName: SystemSelectionLine, Assembly-CSharp
+              m_MethodName: OnGunSelected
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+    - rid: 248524334184792066
+      type: {class: RaycastHitGameEventResponse, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        isEnabled: 1
+        isDelayed: 0
+        delayDuration: 0
+        gameEvent: {fileID: 11400000, guid: a6a584ec91a904bcdae589fb60136197, type: 2}
+        unityEvent:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 11400000, guid: 167edb1fdc534a042b2fc73eea62d694, type: 2}
+              m_TargetAssemblyTypeName: SystemSelectionLine, Assembly-CSharp
+              m_MethodName: OnEnvironmentSelected
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
                 m_FloatArgument: 0
                 m_StringArgument: 
                 m_BoolArgument: 0

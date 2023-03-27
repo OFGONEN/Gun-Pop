@@ -228,7 +228,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 5418828683788368011}
           m_TargetAssemblyTypeName: SelectionLine, Assembly-CSharp
-          m_MethodName: OnDeSpawnLines
+          m_MethodName: OnDeSpawnLine
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

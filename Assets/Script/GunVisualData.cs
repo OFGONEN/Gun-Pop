@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ CreateAssetMenu( fileName = "gun_model_data_", menuName = "FF/Game/Gun Model Data" ) ]
-public class GunColorData : ScriptableObject
+public class GunVisualData : ScriptableObject
 {
 #region Fields
     public Color gun_model_color;

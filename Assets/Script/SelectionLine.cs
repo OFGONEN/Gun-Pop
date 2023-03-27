@@ -17,6 +17,8 @@ public class SelectionLine : MonoBehaviour
 #endregion
 
 #region Properties
+	public Vector3 StartPosition => _lineRenderer.Start;
+	public Vector3 EndPosition   => _lineRenderer.End;
 #endregion
 
 #region Unity API
@@ -35,6 +37,12 @@ public class SelectionLine : MonoBehaviour
     public void UpdateLine( Vector3 position )
     {
 		_lineRenderer.End = position;
+	}
+
+	public void ChangePosition( Vector3 start, Vector3 end )
+	{
+		_lineRenderer.Start = start;
+		_lineRenderer.End   = end;
 	}
 
     public void Despawn()

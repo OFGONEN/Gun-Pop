@@ -57,9 +57,9 @@ public class ToolLevelCreator : SerializedMonoBehaviour
 		Vector3 offset = new Vector3( ( level_size.x - 1 ) * anchor_offset.x / 2f * -1f, ( level_size.y - 1 ) * anchor_offset.y / 2f, 0 );
 		var parent = GameObject.Find( "parent_spawn" ).transform;
 
-		for( var x = 0; x < level_size.x; x++ )
+		for( var y = 0; y < level_size.y; y++ )
 		{
-			for( var y = 0; y < level_size.y; y++ )
+			for( var x = 0; x < level_size.x; x++ )
 			{
 				if( !level_table[ x, y ] ) continue;
 

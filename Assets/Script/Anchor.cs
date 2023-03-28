@@ -7,9 +7,15 @@ using UnityEngine;
 public class Anchor : MonoBehaviour
 {
 #region Fields
+    [ SerializeField ] Anchor anchor_next;
+    [ SerializeField ] Anchor anchor_next_left;
+    [ SerializeField ] Anchor anchor_next_right;
 #endregion
 
 #region Properties
+    public Anchor AnchorNext      => anchor_next;
+    public Anchor AnchorNextLeft  => anchor_next_left;
+    public Anchor AnchorNextRight => anchor_next_right;
 #endregion
 
 #region Unity API
@@ -23,6 +29,23 @@ public class Anchor : MonoBehaviour
 
 #region Editor Only
 #if UNITY_EDITOR
+    public void SetAnchorNext( Anchor anchor )
+    {
+		UnityEditor.EditorUtility.SetDirty( this );
+		anchor_next = anchor;
+	}
+
+	public void SetAnchorNextLeft( Anchor anchor )
+	{
+		UnityEditor.EditorUtility.SetDirty( this );
+		anchor_next_left = anchor;
+	}
+
+	public void SetAnchorNextRight( Anchor anchor )
+	{
+		UnityEditor.EditorUtility.SetDirty( this );
+		anchor_next_right = anchor;
+	}
 #endif
 #endregion
 }

@@ -71,6 +71,24 @@ public class ToolLevelCreator : SerializedMonoBehaviour
 				anchor_list.Add( anchor );
 			}
 		}
+
+		for( var y = 0; y < level_size.y; y++ )
+		{
+			for( var x = 0; x < level_size.x; x++ )
+			{
+				var anchor = level_anchor_array[ x, y ];
+				if( anchor == null	) continue;
+
+				if( y + 1 < level_size.y && level_anchor_array[ x, y + 1 ] != null )
+					anchor.SetAnchorNext( level_anchor_array[ x, y + 1 ] );
+
+				if( y + 1 < level_size.y && x + 1 < level_size.x && level_anchor_array[ x + 1, y + 1 ] != null )
+					anchor.SetAnchorNextRight( level_anchor_array[ x + 1, y + 1 ] );
+
+				if( y + 1 < level_size.y && x - 1 >= 0 && level_anchor_array[ x - 1, y + 1 ] != null )
+					anchor.SetAnchorNextLeft( level_anchor_array[ x - 1, y + 1 ] );
+			}
+		}
 	}
 #endregion
 

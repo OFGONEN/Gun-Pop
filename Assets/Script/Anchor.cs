@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class Anchor : MonoBehaviour
 {
@@ -45,6 +46,18 @@ public class Anchor : MonoBehaviour
 	{
 		UnityEditor.EditorUtility.SetDirty( this );
 		anchor_next_right = anchor;
+	}
+
+    void OnDrawGizmos()
+    {
+        if( anchor_next != null )
+			Handles.DrawLine( transform.position, anchor_next.transform.position );
+
+		if( anchor_next_left != null )
+			Handles.DrawLine( transform.position, anchor_next_left.transform.position );
+
+		if( anchor_next_right != null )
+			Handles.DrawLine( transform.position, anchor_next_right.transform.position );
 	}
 #endif
 #endregion

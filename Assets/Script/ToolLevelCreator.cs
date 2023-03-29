@@ -80,7 +80,8 @@ public class ToolLevelCreator : SerializedMonoBehaviour
 
 		// Set top most anchors
 		for( var x = 0; x < level_size.x; x++ )
-			level_anchor_array[ x, 0 ].SetTopMostAnchor();
+			if( level_anchor_array[ x, 0 ] != null )
+				level_anchor_array[ x, 0 ].SetTopMostAnchor();
 
 
 		// Connect anchors

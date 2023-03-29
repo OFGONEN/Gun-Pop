@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efd7a3ddc29a4939b75247578a9b035, type: 3}
   m_Name: gun_data_1
   m_EditorClassIdentifier: 
-  gun_damage: 0
+  gun_level: 1
+  gun_damage: 1
   gun_nextData: {fileID: 11400000, guid: 72070bbb799e84473aeafdb18bc2087f, type: 2}

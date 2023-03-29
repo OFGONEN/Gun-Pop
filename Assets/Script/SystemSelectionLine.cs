@@ -82,7 +82,9 @@ public class SystemSelectionLine : ScriptableObject
 			}
 
 			var lastSelectedGun = selection_gun_list.PeekLastItem();
-			if( newGun.GunVisualData == lastSelectedGun.GunVisualData ) // New and Same Colored Gun, select it.
+			var distance        = lastSelectedGun.AnchorCoordiante - newGun.AnchorCoordiante;
+
+			if( newGun.GunVisualData == lastSelectedGun.GunVisualData && Mathf.Abs( distance.x ) <= 1 && Mathf.Abs( distance.y ) <= 1 ) // New and Same Colored Gun, select it.
 			{
 				selection_line.Despawn();
 

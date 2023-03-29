@@ -37,14 +37,16 @@ public class Gun : MonoBehaviour
 #region API
     public void Spawn( Vector3 position, Anchor anchor, GunData gunData, GunVisualData gunVisualData )
     {
+		FFLogger.Log( "Spawned", this );
 		gun_data        = gunData;
 		gun_visual_data = gunVisualData;
+		gun_anchor      = anchor;
 
 		gun_collider.enabled = false;
 		UpdateVisual();
 
 		transform.position = position;
-		gun_anchor         = anchor;
+		gameObject.SetActive( true );
 	}
 #endregion
 

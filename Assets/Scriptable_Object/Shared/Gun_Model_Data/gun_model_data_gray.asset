@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun_model_color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
   gun_model_data_array:
-  - gun_model_mesh: {fileID: -4160829265947784085, guid: a4e0019232930bf48821466b17446778, type: 3}
+  - gun_model_mesh: {fileID: -8579701109826704336, guid: ff3d5d612e46dad49802f75c36816971, type: 3}
     gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}

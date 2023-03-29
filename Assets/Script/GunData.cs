@@ -8,6 +8,7 @@ using UnityEngine;
 public class GunData : ScriptableObject
 {
 #region Fields
+    public int gun_level;
     public int gun_damage;
     public GunData gun_nextData;
 #endregion

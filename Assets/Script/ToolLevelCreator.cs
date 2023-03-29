@@ -68,6 +68,8 @@ public class ToolLevelCreator : SerializedMonoBehaviour
 				anchor.transform.parent   = parent;
 
 				level_anchor_array[ x, y ] = anchor;
+				anchor.SetAnchorCoordinate( new Vector2Int( x, y ) );
+
 				anchor_list.Add( anchor );
 			}
 		}

@@ -14,6 +14,7 @@ public class Anchor : MonoBehaviour
     [ SerializeField, ReadOnly ] Anchor anchor_next;
     [ SerializeField, ReadOnly ] Anchor anchor_next_left;
     [ SerializeField, ReadOnly ] Anchor anchor_next_right;
+    [ SerializeField, ReadOnly ] Vector2Int anchor_coordinate;
     [ SerializeField, ReadOnly ] bool anchor_topMost;
 #endregion
 
@@ -56,6 +57,12 @@ public class Anchor : MonoBehaviour
     {
 		UnityEditor.EditorUtility.SetDirty( this );
 		anchor_topMost = true;
+	}
+
+	public void SetAnchorCoordinate( Vector2Int coordinate )
+	{
+		UnityEditor.EditorUtility.SetDirty( this );
+		anchor_coordinate = coordinate;
 	}
 
     void OnDrawGizmos()

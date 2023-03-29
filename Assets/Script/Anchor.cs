@@ -19,12 +19,15 @@ public class Anchor : MonoBehaviour
     [ SerializeField, ReadOnly ] Anchor anchor_next_right;
     [ SerializeField, ReadOnly ] Vector2Int anchor_coordinate;
     [ SerializeField, ReadOnly ] bool anchor_topMost;
+
+	Gun gun_current;
 #endregion
 
 #region Properties
     public Anchor AnchorNext      => anchor_next;
     public Anchor AnchorNextLeft  => anchor_next_left;
     public Anchor AnchorNextRight => anchor_next_right;
+    public Gun ResidingGun        => gun_current;
 #endregion
 
 #region Unity API
@@ -40,6 +43,10 @@ public class Anchor : MonoBehaviour
 #endregion
 
 #region API
+	public void HostGun( Gun gun )
+	{
+		gun_current = gun;
+	}
 #endregion
 
 #region Implementation

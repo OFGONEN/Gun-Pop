@@ -91,6 +91,22 @@ namespace FFStudio
 		}
 	}
 
+	public class Vector2GameEventResponse : GenericEventListenerGenericUnityEventResponse< Vector2GameEvent, Vector2 >
+	{
+		protected override void OnEventResponse()
+		{
+			unityEvent.Invoke( gameEvent.eventValue );
+		}
+	}
+
+	public class RaycastHitGameEventResponse : GenericEventListenerGenericUnityEventResponse< RaycastHitGameEvent, RaycastHitData >
+	{
+		protected override void OnEventResponse()
+		{
+			unityEvent.Invoke( gameEvent.event_data );
+		}
+	}
+
 	public class ReferenceGameEventResponse : GenericEventListenerGenericUnityEventResponse< ReferenceGameEvent, object >
 	{
 		protected override void OnEventResponse()

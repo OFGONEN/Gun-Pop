@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   set_anchor: {fileID: 11400000, guid: 626ab69f104b04d8199030e03d5fced5, type: 2}
+  pool_gun: {fileID: 11400000, guid: e391d175f3e164116a8ab5b611ded178, type: 2}
   anchor_next: {fileID: 0}
   anchor_next_left: {fileID: 0}
   anchor_next_right: {fileID: 0}

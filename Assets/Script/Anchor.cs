@@ -12,6 +12,7 @@ public class Anchor : MonoBehaviour
 #region Fields
   [ Title( "Shared" ) ]
 	[ SerializeField ] RunTimeSetAnchor set_anchor;
+	[ SerializeField ] PoolGun pool_gun;
 
   [ Title( "Setup" ) ]
     [ SerializeField, ReadOnly ] Anchor anchor_next;
@@ -43,10 +44,6 @@ public class Anchor : MonoBehaviour
 #endregion
 
 #region API
-	public void HostGun( Gun gun )
-	{
-		gun_current = gun;
-	}
 #endregion
 
 #region Implementation

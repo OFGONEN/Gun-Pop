@@ -9,6 +9,8 @@ using Sirenix.OdinInspector;
 public class Gun : MonoBehaviour
 {
 #region Fields
+  [ Title( "Shared" ) ]
+    [ SerializeField ] PoolGun pool_gun;
 
   [ Title( "Components" ) ]
     [ SerializeField ] Collider gun_collider;

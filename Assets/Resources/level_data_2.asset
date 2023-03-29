@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea3c0b9fd00fd441b6cebc5941ee13b, type: 3}
+  m_Name: level_data_2
+  m_EditorClassIdentifier: 
+  scene_index: 2
+  scene_overrideAsActiveScene: 0
+  data_gunColor_percentage_array:
+  - data_percentage: 50
+    data: {fileID: 11400000, guid: 87ea8538458e845fdab0b1a1d7abcb22, type: 2}
+  - data_percentage: 50
+    data: {fileID: 11400000, guid: 9b338fe74c32f4fc79dd2454c7f44913, type: 2}
+  data_gun_percentage_array:
+  - data_percentage: 100
+    data: {fileID: 11400000, guid: 346d2b355d9194899bac436ad6d4d372, type: 2}
+  level_size: {x: 6, y: 6}

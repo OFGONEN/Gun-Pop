@@ -12,7 +12,7 @@ public class Anchor : MonoBehaviour
 #region Fields
   [ Title( "Shared" ) ]
 	[ SerializeField ] RunTimeSetAnchor set_anchor;
-	[ SerializeField ] PoolGun pool_gun;
+	[ SerializeField ] SystemSpawn system_spawn;
 
   [ Title( "Setup" ) ]
     [ SerializeField, ReadOnly ] Anchor anchor_next;
@@ -44,9 +44,20 @@ public class Anchor : MonoBehaviour
 #endregion
 
 #region API
+	public void OnLevelStart()
+	{
+		SpawnGun();
+	}
 #endregion
 
 #region Implementation
+	void SpawnGun()
+	{
+		var spawnData = system_spawn.GetGunSpawnData();
+		spawnData.Item1.Spawn( transform.position, this, spawnData.Item2, spawnData.Item3 );
+
+		gun_current = spawnData.Item1;
+	}
 #endregion
 
 #region Editor Only

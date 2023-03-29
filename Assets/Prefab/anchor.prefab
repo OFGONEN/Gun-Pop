@@ -178,3 +178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4582fcd8cc4dc4dc0a18c20a1718ddd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  set_anchor: {fileID: 11400000, guid: 626ab69f104b04d8199030e03d5fced5, type: 2}
+  anchor_next: {fileID: 0}
+  anchor_next_left: {fileID: 0}
+  anchor_next_right: {fileID: 0}
+  anchor_coordinate: {x: 0, y: 0}
+  anchor_topMost: 0

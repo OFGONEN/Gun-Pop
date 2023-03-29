@@ -3,12 +3,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FFStudio;
 using UnityEditor;
 using Sirenix.OdinInspector;
 
 public class Anchor : MonoBehaviour
 {
 #region Fields
+  [ Title( "Shared" ) ]
+	[ SerializeField ] RunTimeSetAnchor set_anchor;
 
   [ Title( "Setup" ) ]
     [ SerializeField, ReadOnly ] Anchor anchor_next;
@@ -25,6 +28,15 @@ public class Anchor : MonoBehaviour
 #endregion
 
 #region Unity API
+	void OnEnable()
+	{
+		set_anchor.AddDictionary( anchor_coordinate.GetUniqueHashCode_PositiveIntegers(), this );
+	}
+
+	void OnDisable()
+	{
+		set_anchor.RemoveDictionary( anchor_coordinate.GetUniqueHashCode_PositiveIntegers() );
+	}
 #endregion
 
 #region API

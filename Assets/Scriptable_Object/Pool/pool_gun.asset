@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38788d1ba01a4f7483b504323753729, type: 3}
   m_Name: pool_gun
   m_EditorClassIdentifier: 
-  stackSize: 0
+  stackSize: 64
   pool_entity: {fileID: 3190781813066941332, guid: d3180622728fa4e05b3cfb193a8df29e, type: 3}

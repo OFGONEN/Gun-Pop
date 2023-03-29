@@ -23,6 +23,7 @@ namespace FFStudio
 	[ Title( "Pool" ) ]
 		[ SerializeField ] Pool_UIPopUpText pool_UIPopUpText;
 		[ SerializeField ] PoolSelectionLine pool_selection_line;
+		[ SerializeField ] PoolGun pool_gun;
 #endregion
 
 #region UnityAPI
@@ -37,6 +38,7 @@ namespace FFStudio
 
 			pool_UIPopUpText.InitPool( transform, false );
 			pool_selection_line.InitPool( transform, false );
+			pool_gun.InitPool( transform, false );
 			onAwakeEvent.Invoke();
 		}
 

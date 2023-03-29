@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086ffc152d667438094b22314c2c7742, type: 3}
   m_Name: set_gun
   m_EditorClassIdentifier: 
-  setSize: 0
+  setSize: 12
   itemList: []

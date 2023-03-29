@@ -42,6 +42,7 @@ public class Gun : MonoBehaviour
 		UpdateVisual();
 
 		transform.position = position;
+		gun_anchor         = anchor;
 	}
 #endregion
 

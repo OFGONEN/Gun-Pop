@@ -13,6 +13,8 @@ namespace FFStudio
     [ Title( "Selection System" ) ]
 		[ LabelText( "Selection Layer" ), Layer() ] public int selection_layer;
 		[ LabelText( "Selection Delta" ) ] public float selection_delta;
+
+    [ Title( "Gun" ) ]
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;

@@ -25,6 +25,7 @@ public class Gun : MonoBehaviour
 #region Properties
     public GunVisualData GunVisualData => gun_visual_data;
     public GunData GunData             => gun_data;
+	public Vector2Int AnchorCoordiante => gun_anchor.AnchorCoordinate;
 #endregion
 
 #region Unity API

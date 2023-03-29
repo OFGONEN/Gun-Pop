@@ -25,10 +25,11 @@ public class Anchor : MonoBehaviour
 #endregion
 
 #region Properties
-    public Anchor AnchorNext      => anchor_next;
-    public Anchor AnchorNextLeft  => anchor_next_left;
-    public Anchor AnchorNextRight => anchor_next_right;
-    public Gun ResidingGun        => gun_current;
+    public Anchor AnchorNext           => anchor_next;
+    public Anchor AnchorNextLeft       => anchor_next_left;
+    public Anchor AnchorNextRight      => anchor_next_right;
+    public Vector2Int AnchorCoordinate => anchor_coordinate;
+    public Gun ResidingGun             => gun_current;
 #endregion
 
 #region Unity API

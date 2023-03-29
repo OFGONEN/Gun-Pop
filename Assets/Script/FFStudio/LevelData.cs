@@ -18,6 +18,7 @@ namespace FFStudio
 	[ Title( "Level" ) ]
 		[ LabelText( "Gun Color Data Percentage " ) ] public DataPercentageGunColorData[] data_gunColor_percentage_array;
 		[ LabelText( "Gun Data Percentage " ) ] public DataPercentageGunData[] data_gun_percentage_array;
+		[ LabelText( "Level Size " ) ] public Vector2Int level_size;
 
 #if UNITY_EDITOR
 		static IEnumerable SceneList()

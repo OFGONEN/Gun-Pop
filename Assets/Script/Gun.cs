@@ -3,10 +3,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FFStudio;
+using Sirenix.OdinInspector;
 
 public class Gun : MonoBehaviour
 {
 #region Fields
+
+  [ Title( "Components" ) ]
+    [ SerializeField ] Collider gun_collider;
+    [ SerializeField ] MeshFilter gun_mesh_filter;
+    [ SerializeField ] MeshRenderer gun_mesh_renderer;
+
     GunData gun_data;
     GunVisualData gun_color_data;
 #endregion
@@ -17,6 +25,10 @@ public class Gun : MonoBehaviour
 #endregion
 
 #region Unity API
+    void Awake()
+    {
+		gun_collider.enabled = false;
+	}
 #endregion
 
 #region API

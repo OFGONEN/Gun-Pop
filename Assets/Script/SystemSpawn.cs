@@ -10,6 +10,9 @@ using Sirenix.OdinInspector;
 public class SystemSpawn : ScriptableObject
 {
 #region Fields
+  [ Title( "Shared" ) ]
+	[ SerializeField ] PoolGun pool_gun;
+	  
 #endregion
 
 #region Properties
@@ -19,8 +22,15 @@ public class SystemSpawn : ScriptableObject
 #endregion
 
 #region API
-    [ Button() ]
-    public ( GunData, GunVisualData ) GetSpawnData()
+	public ( Gun, GunData, GunVisualData ) GetGunSpawnData() 
+	{
+		var spawnData = GetSpawnData();
+		return ( pool_gun.GetEntity(), spawnData.Item1, spawnData.Item2 );
+	}
+#endregion
+
+#region Implementation
+    ( GunData, GunVisualData ) GetSpawnData()
     {
 		GunData      gun_data       = null;
 		GunVisualData gun_color_data = null;
@@ -61,9 +71,6 @@ public class SystemSpawn : ScriptableObject
 
 		return ( gun_data, gun_color_data );
 	}
-#endregion
-
-#region Implementation
 #endregion
 
 #region Editor Only

@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d7e97590ad244b3b7b620cd0ffb660, type: 3}
   m_Name: system_spawn
   m_EditorClassIdentifier: 
+  pool_gun: {fileID: 11400000, guid: e391d175f3e164116a8ab5b611ded178, type: 2}

@@ -63,24 +63,34 @@ public class SystemSelectionLine : ScriptableObject
 
     void NewGunSelected( RaycastHitData data )
     {
-        var newGun = data.hit_collider.GetComponent< ComponentHost >().HostComponent as Gun;
+        var newGun           = data.hit_collider.GetComponent< ComponentHost >().HostComponent as Gun;
 
-        if( newGun != selection_gun_list.PeekLastItem() && newGun != selection_gun_list.PeekPenultimateItem() )
-        {
-			selection_line.Despawn();
-
-			SpawnLineBetweenGuns( selection_gun_list.PeekLastItem(), newGun );
-			SpawnLineOnGun( newGun );
-
-			selection_gun_list.Add( newGun );
-		}
-        else if( newGun != selection_gun_list.PeekLastItem() ) // Equals to Penultimate, Deselect last gun
-        {
+		if( newGun == selection_gun_list.PeekPenultimateItem() ) // Equals to Penultimate, Deselect last gun
+		{
 			selection_line_list.ReturnLastItem().Despawn();
 			selection_gun_list.RemoveLastItem();
 
 			var gun = selection_gun_list.PeekLastItem();
 			selection_line.ChangePosition( gun.transform.position, selection_line.EndPosition );
+		}
+		else // It can be new gun or a gun that is already selected
+		{
+			for( var i = 0; i < selection_gun_list.Count; i++ )
+			{
+				if( selection_gun_list[ i ] == newGun )
+					return; // Do nothing
+			}
+
+			var lastSelectedGun = selection_gun_list.PeekLastItem();
+			if( newGun.GunVisualData == lastSelectedGun.GunVisualData ) // New and Same Colored Gun, select it.
+			{
+				selection_line.Despawn();
+
+				SpawnLineBetweenGuns( lastSelectedGun, newGun );
+				SpawnLineOnGun( newGun );
+
+				selection_gun_list.Add( newGun );
+			}
 		}
     }
 

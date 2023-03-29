@@ -38,7 +38,6 @@ public class Gun : MonoBehaviour
 #region API
     public void Spawn( Vector3 position, Anchor anchor, GunData gunData, GunVisualData gunVisualData )
     {
-		FFLogger.Log( "Spawned", this );
 		gun_data        = gunData;
 		gun_visual_data = gunVisualData;
 		gun_anchor      = anchor;
@@ -54,7 +53,7 @@ public class Gun : MonoBehaviour
 #region Implementation
     void UpdateVisual()
     {
-		var visualData = gun_visual_data.gun_model_data_array[ gun_data.gun_level ];
+		var visualData = gun_visual_data.gun_model_data_array[ Mathf.Min( gun_data.gun_level, gun_visual_data.gun_model_data_array.Length - 1 ) ];
 
 		gun_mesh_filter.mesh             = visualData.gun_model_mesh;
 		gun_mesh_renderer.sharedMaterial = visualData.gun_model_material;

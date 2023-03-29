@@ -16,3 +16,21 @@ MonoBehaviour:
   gun_model_data_array:
   - gun_model_mesh: {fileID: 4422579997023720865, guid: 00c5ac58d4e8eb543a6d4672ab45eb1d, type: 3}
     gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: -7876520379235762759, guid: 4669e02aaed067e409a71debd8e38c2c, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: 6998239889388862556, guid: db86be19c85a3b2408c1460420a76ea1, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: 3088957002785745641, guid: b6b74444e1520314885aa1a6917919ee, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: -1449739229135961681, guid: 6e1fff59f856d7841841fbee6ee03f42, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: 8134291208570443546, guid: 71dab97efaea01c4a9123908182010fc, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: 2419824916887948874, guid: 9050917a401688f41b4c911da4aba11c, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: -297703888345774710, guid: 69658d9a2c0cdef47b64ce44207edd17, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: -2314478125428382984, guid: def822eb9758aa848b17b55e34a2ee3a, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: -6052818575588831594, guid: fb6ad93a23cf0184fa6b4cf966ac7027, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}

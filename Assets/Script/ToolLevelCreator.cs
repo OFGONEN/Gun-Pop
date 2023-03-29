@@ -15,6 +15,7 @@ public class ToolLevelCreator : SerializedMonoBehaviour
 	[ SerializeField ] Anchor anchor_prefab;
 	[ SerializeField ] Vector2 anchor_offset;
 	[ SerializeField ] Vector2Int level_size;
+	[ SerializeField ] LevelData level_data;
 
   [ Title( "Output" ) ]
     [ TableMatrix( DrawElementMethod = "DrawCell" ) ]
@@ -51,6 +52,9 @@ public class ToolLevelCreator : SerializedMonoBehaviour
 
 		foreach( var anchor in anchor_list )
 			DestroyImmediate( anchor.gameObject );
+
+		UnityEditor.EditorUtility.SetDirty( level_data );
+		level_data.level_size = level_size;
 
 		anchor_list.Clear();
 

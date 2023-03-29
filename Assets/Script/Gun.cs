@@ -16,11 +16,12 @@ public class Gun : MonoBehaviour
     [ SerializeField ] MeshRenderer gun_mesh_renderer;
 
     GunData gun_data;
-    GunVisualData gun_color_data;
+    GunVisualData gun_visual_data;
+    Anchor gun_anchor;
 #endregion
 
 #region Properties
-    public GunVisualData GunVisualData => gun_color_data;
+    public GunVisualData GunVisualData => gun_visual_data;
     public GunData GunData             => gun_data;
 #endregion
 
@@ -32,9 +33,26 @@ public class Gun : MonoBehaviour
 #endregion
 
 #region API
+    public void Spawn( Vector3 position, Anchor anchor, GunData gunData, GunVisualData gunVisualData )
+    {
+		gun_data        = gunData;
+		gun_visual_data = gunVisualData;
+
+		gun_collider.enabled = false;
+		UpdateVisual();
+
+		transform.position = position;
+	}
 #endregion
 
 #region Implementation
+    void UpdateVisual()
+    {
+		var visualData = gun_visual_data.gun_model_data_array[ gun_data.gun_level ];
+
+		gun_mesh_filter.mesh             = visualData.gun_model_mesh;
+		gun_mesh_renderer.sharedMaterial = visualData.gun_model_material;
+	}
 #endregion
 
 #region Editor Only

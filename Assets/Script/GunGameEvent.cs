@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FFStudio;
 
-[ CreateAssetMenu( fileName = "event_", menuName = "FF/Event/Gun Game Event" ) ]
+[ CreateAssetMenu( fileName = "event_", menuName = "FF/Game/Event/Gun Game Event" ) ]
 public class GunGameEvent : GameEvent
 {
 #region Fields

@@ -4,13 +4,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using Sirenix.OdinInspector;
 
 public class Anchor : MonoBehaviour
 {
 #region Fields
-    [ SerializeField ] Anchor anchor_next;
-    [ SerializeField ] Anchor anchor_next_left;
-    [ SerializeField ] Anchor anchor_next_right;
+
+  [ Title( "Setup" ) ]
+    [ SerializeField, ReadOnly ] Anchor anchor_next;
+    [ SerializeField, ReadOnly ] Anchor anchor_next_left;
+    [ SerializeField, ReadOnly ] Anchor anchor_next_right;
+    [ SerializeField, ReadOnly ] bool anchor_topMost;
 #endregion
 
 #region Properties
@@ -46,6 +50,12 @@ public class Anchor : MonoBehaviour
 	{
 		UnityEditor.EditorUtility.SetDirty( this );
 		anchor_next_right = anchor;
+	}
+
+    public void SetTopMostAnchor()
+    {
+		UnityEditor.EditorUtility.SetDirty( this );
+		anchor_topMost = true;
 	}
 
     void OnDrawGizmos()

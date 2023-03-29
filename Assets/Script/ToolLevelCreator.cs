@@ -72,6 +72,12 @@ public class ToolLevelCreator : SerializedMonoBehaviour
 			}
 		}
 
+		// Set top most anchors
+		for( var x = 0; x < level_size.x; x++ )
+			level_anchor_array[ x, 0 ].SetTopMostAnchor();
+
+
+		// Connect anchors
 		for( var y = 0; y < level_size.y; y++ )
 		{
 			for( var x = 0; x < level_size.x; x++ )

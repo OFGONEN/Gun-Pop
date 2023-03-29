@@ -20,6 +20,8 @@ MonoBehaviour:
   - data_percentage: 50
     data: {fileID: 11400000, guid: d0bbeeb45fa47410e9ed730a8d4e580d, type: 2}
   data_gun_percentage_array:
-  - data_percentage: 100
+  - data_percentage: 90
     data: {fileID: 11400000, guid: 346d2b355d9194899bac436ad6d4d372, type: 2}
+  - data_percentage: 10
+    data: {fileID: 11400000, guid: 72070bbb799e84473aeafdb18bc2087f, type: 2}
   level_size: {x: 6, y: 8}

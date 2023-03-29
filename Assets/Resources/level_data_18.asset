@@ -22,6 +22,12 @@ MonoBehaviour:
   - data_percentage: 34
     data: {fileID: 11400000, guid: 9b338fe74c32f4fc79dd2454c7f44913, type: 2}
   data_gun_percentage_array:
-  - data_percentage: 100
+  - data_percentage: 70
     data: {fileID: 11400000, guid: 346d2b355d9194899bac436ad6d4d372, type: 2}
+  - data_percentage: 15
+    data: {fileID: 11400000, guid: 72070bbb799e84473aeafdb18bc2087f, type: 2}
+  - data_percentage: 10
+    data: {fileID: 11400000, guid: 1c9142f50d2a3854f86091b2c7f3a54a, type: 2}
+  - data_percentage: 5
+    data: {fileID: 11400000, guid: 90bc803cab586be4c86fd3de4b623d2c, type: 2}
   level_size: {x: 7, y: 8}

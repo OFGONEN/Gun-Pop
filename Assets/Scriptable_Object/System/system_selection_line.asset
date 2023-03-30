@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: system_selection_line
   m_EditorClassIdentifier: 
   pool_selection_line: {fileID: 11400000, guid: bdaf4a95ba4c7478a9c939a6c30114f7, type: 2}
+  set_gun: {fileID: 11400000, guid: 410b23c9a6b9e466a963f084c10c2fc3, type: 2}

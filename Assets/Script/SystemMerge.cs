@@ -13,6 +13,7 @@ public class SystemMerge : ScriptableObject
   [ Title( "Shared" ) ]
     [ SerializeField ] RunTimeSetGun set_gun;
     [ SerializeField ] GameEvent event_selection_enable;
+    [ SerializeField ] GameEvent event_selection_line_despawn;
 
     int merge_index;
     Gun merge_gun;
@@ -41,19 +42,20 @@ public class SystemMerge : ScriptableObject
 		merge_gun   = set_gun.itemList[ 0 ];
 
 		merge_gun.DoMerge( set_gun.itemList[ merge_index ], OnMergeDone );
+		event_selection_line_despawn.Raise();
 	}
 
     void ContiuneMerge()
     {
 		merge_index++;
 		merge_gun.DoMerge( set_gun.itemList[ merge_index ], OnMergeDone );
+		event_selection_line_despawn.Raise();
 	}
 
     void OnMergeDone()
     {
 		set_gun.itemList[ merge_index ].OnMerged();
 		merge_gun.DoUpgrade();
-        // Remove selection line
 
 		if( merge_index == set_gun.itemList.Count - 1 )
 			OnMergeSequenceComplete();
@@ -63,7 +65,6 @@ public class SystemMerge : ScriptableObject
 
     void OnMergeSequenceComplete()
     {
-		// lift the gun up and fire
 		merge_gun.DoFire();
 	}
 #endregion

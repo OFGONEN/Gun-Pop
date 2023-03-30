@@ -15,6 +15,8 @@ namespace FFStudio
 		[ LabelText( "Selection Delta" ) ] public float selection_delta;
 
     [ Title( "Gun" ) ]
+    [ Title( "Merge" ) ]
+		[ LabelText( "Merge Min Count" ) ] public int merge_count;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;

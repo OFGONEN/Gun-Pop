@@ -39,7 +39,7 @@ public class SystemSelectionLine : ScriptableObject
 	{
 		selection_line.Despawn();
 
-		SpawnLineBetweenGuns( set_gun.itemList.PeekLastItem(), gun );
+		SpawnLineBetweenGuns( set_gun.itemList.PeekPenultimateItem(), gun );
 		SpawnLineOnGun( gun );
 	}
 

@@ -15,7 +15,7 @@ public class SystemSelectionLine : ScriptableObject
 	[ SerializeField ] RunTimeSetGun set_gun;
 
     SelectionLine selection_line;
-	List< SelectionLine > selection_line_list = new List< SelectionLine >( 16 );
+	[ ShowInInspector, ReadOnly ] List< SelectionLine > selection_line_list = new List< SelectionLine >( 16 );
 #endregion
 
 #region Properties
@@ -75,6 +75,8 @@ public class SystemSelectionLine : ScriptableObject
 
 		selectionLine.Spawn( start.transform.position, start.GunVisualData.gun_model_color );
 		selectionLine.UpdateLine( end.transform.position );
+
+		selection_line_list.Add( selectionLine );
 	}
 #endregion
 

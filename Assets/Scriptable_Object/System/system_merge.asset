@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   set_gun: {fileID: 11400000, guid: 410b23c9a6b9e466a963f084c10c2fc3, type: 2}
   event_selection_enable: {fileID: 11400000, guid: ada79a55e0f6946c7aef98f28577db93, type: 2}
+  event_selection_line_despawn: {fileID: 11400000, guid: 66c140c8623c8486984bf08d0c644c38, type: 2}

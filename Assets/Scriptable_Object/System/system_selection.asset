@@ -15,7 +15,7 @@ MonoBehaviour:
   event_selection_gun_inital: {fileID: 11400000, guid: 38a259b796533429a83263d56f8ac3c2, type: 2}
   event_selection_gun_new: {fileID: 11400000, guid: 4dd19de4e7c2a4bd0a3245f928bfa6fc, type: 2}
   event_selection_gun_deselect: {fileID: 11400000, guid: 46432136bc91b4dae950c849358af1c5, type: 2}
-  event_selection_end: {fileID: 11400000, guid: deb710b3c895940a99fca1357aec77ce, type: 2}
+  event_selection_complete: {fileID: 11400000, guid: deb710b3c895940a99fca1357aec77ce, type: 2}
   event_selection_ground: {fileID: 11400000, guid: a6a584ec91a904bcdae589fb60136197, type: 2}
   notif_camera_reference: {fileID: 11400000, guid: 488e798dd6f140e4a84fa7485b885dd3, type: 2}
   set_gun: {fileID: 11400000, guid: 410b23c9a6b9e466a963f084c10c2fc3, type: 2}

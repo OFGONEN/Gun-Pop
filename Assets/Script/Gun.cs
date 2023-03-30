@@ -42,7 +42,7 @@ public class Gun : MonoBehaviour
 		gun_visual_data = gunVisualData;
 		gun_anchor      = anchor;
 
-		gun_collider.enabled = false;
+		gun_collider.enabled = true;
 		UpdateVisual();
 
 		transform.position = position;

@@ -15,7 +15,7 @@ public class SystemSelectionLine : ScriptableObject
 	[ SerializeField ] RunTimeSetGun set_gun;
 
     SelectionLine selection_line;
-	[ ShowInInspector, ReadOnly ] List< SelectionLine > selection_line_list = new List< SelectionLine >( 16 );
+	[ ShowInInspector, ReadOnly ] List< SelectionLine > selection_line_list;
 #endregion
 
 #region Properties
@@ -25,6 +25,11 @@ public class SystemSelectionLine : ScriptableObject
 #endregion
 
 #region API
+	public void Init()
+	{
+		selection_line_list = new List< SelectionLine >( 16 );
+	}
+
     public void OnEnvironmentSelected( RaycastHitData data )
     {
 		selection_line.UpdateLine( data.hit_position );
@@ -47,6 +52,12 @@ public class SystemSelectionLine : ScriptableObject
 	{
 		selection_line_list.ReturnLastItem().Despawn();
 		selection_line.ChangePosition( set_gun.itemList.PeekLastItem().transform.position, selection_line.EndPosition );
+	}
+
+	public void OnSelectionLineDespawn()
+	{
+		selection_line_list[ 0 ].Despawn();
+		selection_line_list.RemoveAt( 0 );
 	}
 
 	public void OnSelectionComplete()

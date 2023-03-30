@@ -94,7 +94,10 @@ public class SystemSelection : ScriptableObject
 				for( var i = 0; i < set_gun.itemList.Count; i++ )
 				{
 					if( set_gun.itemList[ i ] == gun )
+					{
+						event_selection_ground.Raise( hit.point, hit.collider );
 						return; // Do nothing
+					}
 				}
 
 				var lastSelectedGun = set_gun.itemList.PeekLastItem();
@@ -105,6 +108,8 @@ public class SystemSelection : ScriptableObject
 					set_gun.itemList.Add( gun );
 					event_selection_gun_new.Raise( gun );
 				}
+				else
+					event_selection_ground.Raise( hit.point, hit.collider );
 			}
 		}
 		else

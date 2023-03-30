@@ -49,10 +49,13 @@ public class SystemSelectionLine : ScriptableObject
 		selection_line.ChangePosition( set_gun.itemList.PeekLastItem().transform.position, selection_line.EndPosition );
 	}
 
-	public void OnSelectionEnd()
+	public void OnSelectionComplete()
 	{
 		selection_line.Despawn();
+	}
 
+	public void OnSelectionEnable()
+	{
         foreach( var line in selection_line_list )
 			line.Despawn();
 

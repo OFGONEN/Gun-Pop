@@ -14,7 +14,7 @@ public class SystemSelection : ScriptableObject
     [ SerializeField ] GunGameEvent event_selection_gun_inital;
     [ SerializeField ] GunGameEvent event_selection_gun_new;
 	[ SerializeField ] GameEvent event_selection_gun_deselect;
-	[ SerializeField ] GameEvent event_selection_end;
+	[ SerializeField ] GameEvent event_selection_complete;
     [ SerializeField ] RaycastHitGameEvent event_selection_ground;
 
   [ Title( "Shared" ) ]
@@ -63,7 +63,7 @@ public class SystemSelection : ScriptableObject
 		onFingerUpdate = Extensions.EmptyMethod;
 		onFingerUp     = Extensions.EmptyMethod;
 
-		event_selection_end.Raise();
+		event_selection_complete.Raise();
 	}
 
 	void FingerDown( Vector2 screenPosition )

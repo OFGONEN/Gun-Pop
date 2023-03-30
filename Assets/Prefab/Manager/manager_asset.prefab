@@ -547,6 +547,7 @@ MonoBehaviour:
   - rid: 5382518016302120965
   - rid: 5382518016398327808
   - rid: 5382518016398327809
+  - rid: 5382518019977904129
   references:
     version: 2
     RefIds:
@@ -628,7 +629,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 11400000, guid: 167edb1fdc534a042b2fc73eea62d694, type: 2}
               m_TargetAssemblyTypeName: SystemSelectionLine, Assembly-CSharp
-              m_MethodName: OnSelectionEnd
+              m_MethodName: OnSelectionComplete
               m_Mode: 1
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
@@ -652,6 +653,28 @@ MonoBehaviour:
               m_TargetAssemblyTypeName: SystemSelectionLine, Assembly-CSharp
               m_MethodName: OnEnvironmentSelected
               m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+    - rid: 5382518019977904129
+      type: {class: BasicGameEventResponse, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        isEnabled: 1
+        isDelayed: 0
+        delayDuration: 0
+        gameEvent: {fileID: 11400000, guid: ada79a55e0f6946c7aef98f28577db93, type: 2}
+        unityEvent:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 11400000, guid: 167edb1fdc534a042b2fc73eea62d694, type: 2}
+              m_TargetAssemblyTypeName: SystemSelectionLine, Assembly-CSharp
+              m_MethodName: OnSelectionEnable
+              m_Mode: 1
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
                 m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

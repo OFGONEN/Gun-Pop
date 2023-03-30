@@ -56,6 +56,9 @@ public class SystemSelection : ScriptableObject
 	{
 		onFingerUpdate = FingerDown;
 		onFingerUp     = Extensions.EmptyMethod;
+
+		set_gun.itemList.Clear();
+		event_selection_end.Raise();
 	}
 	void FingerDown( Vector2 screenPosition )
 	{

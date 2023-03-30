@@ -17,6 +17,9 @@ namespace FFStudio
     [ Title( "Gun" ) ]
     [ Title( "Merge" ) ]
 		[ LabelText( "Merge Min Count" ) ] public int merge_count;
+		[ LabelText( "Merge Jump Power" ) ] public float  merge_jump_power;
+		[ LabelText( "Merge Jump Duration" ) ] public float  merge_jump_duration;
+		[ LabelText( "Merge Jump Ease" ) ] public Ease merge_jump_ease;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;

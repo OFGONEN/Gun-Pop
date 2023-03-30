@@ -37,7 +37,7 @@ public class SystemSelection : ScriptableObject
     {
         _camera = ( notif_camera_reference.sharedValue as Transform ).GetComponent< Camera >();
 
-		onFingerUpdate = FingerDown;
+		OnEnableSelection();
 	}
 
 	public void OnFingerUpdate( Vector2 screenPosition )
@@ -49,17 +49,23 @@ public class SystemSelection : ScriptableObject
 	{
 		onFingerUp();
 	}
+
+	public void OnEnableSelection()
+	{
+		onFingerUpdate = FingerDown;
+		set_gun.itemList.Clear();
+	}
 #endregion
 
 #region Implementation
 	void FingerUp()
 	{
-		onFingerUpdate = FingerDown;
+		onFingerUpdate = Extensions.EmptyMethod;
 		onFingerUp     = Extensions.EmptyMethod;
 
-		set_gun.itemList.Clear();
 		event_selection_end.Raise();
 	}
+
 	void FingerDown( Vector2 screenPosition )
 	{
 		var hit = TryToSelect( screenPosition );

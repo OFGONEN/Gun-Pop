@@ -81,7 +81,7 @@ public class SystemSelection : ScriptableObject
 		{
 			var gun = hit.collider.GetComponent< ComponentHost >().HostComponent as Gun;
 
-			if( gun == set_gun.itemList.PeekPenultimateItem() ) // Deselect last selected gun
+			if( gun != set_gun.itemList.PeekLastItem() && gun == set_gun.itemList.PeekPenultimateItem() ) // Deselect last selected gun
 			{
 				set_gun.itemList.RemoveLastItem();
 				event_selection_gun_deselect.Raise();

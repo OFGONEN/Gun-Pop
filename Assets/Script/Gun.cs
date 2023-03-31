@@ -12,6 +12,7 @@ public class Gun : MonoBehaviour
 #region Fields
   [ Title( "Shared" ) ]
     [ SerializeField ] PoolGun pool_gun;
+    [ SerializeField ] SharedVector3Notifier notif_gun_fire_position;
 
   [ Title( "Components" ) ]
     [ SerializeField ] Collider gun_collider;
@@ -78,7 +79,11 @@ public class Gun : MonoBehaviour
 
 	public void DoFire()
 	{
-		recycledTween.Recycle( transform.DOMove( Vector3.zero.SetY( 1f ), 0.25f ).SetEase( Ease.OutQuart ) );
+		recycledTween.Recycle( transform.DOMove( 
+			notif_gun_fire_position.sharedValue, 
+			GameSettings.Instance.gun_fire_move_duration )
+			.SetEase( GameSettings.Instance.gun_fire_move_ease )
+		);
 	}
 #endregion
 

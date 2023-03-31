@@ -23,6 +23,8 @@ MonoBehaviour:
     elasticity: 1
     ease: 12
   merge_count: 3
+  merge_size_final: 2
+  merge_size_step: 0.1
   merge_jump_power: 1.5
   merge_jump_duration: 0.25
   merge_jump_delay: 0.025

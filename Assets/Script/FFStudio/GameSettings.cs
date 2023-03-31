@@ -21,6 +21,8 @@ namespace FFStudio
 
     [ Title( "Merge" ) ]
 		[ LabelText( "Merge Min Count" ) ] public int merge_count;
+		[ LabelText( "Merge Size Final" ) ] public float merge_size_final;
+		[ LabelText( "Merge Size Step" ) ] public float merge_size_step;
 		[ LabelText( "Merge Jump Power" ) ] public float  merge_jump_power;
 		[ LabelText( "Merge Jump Duration" ) ] public float  merge_jump_duration;
 		[ LabelText( "Merge Jump Delay" ) ] public float  merge_jump_delay;

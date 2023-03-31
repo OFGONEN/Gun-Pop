@@ -65,6 +65,7 @@ public class Gun : MonoBehaviour
 	public void DoMerge( Gun target, UnityMessage onMergeDone )
 	{
 		var targetPosition = target.transform.position;
+		var targetScale    = transform.localScale + Vector3.one * GameSettings.Instance.merge_size_step;
 
 		var sequence = recycledSequence.Recycle( onMergeDone );
 		sequence.Append( transform.DOMoveX(
@@ -83,6 +84,12 @@ public class Gun : MonoBehaviour
 			-GameSettings.Instance.merge_jump_power,
 			GameSettings.Instance.merge_jump_duration )
 			.SetEase( GameSettings.Instance.merge_jump_ease )
+		);
+
+		sequence.Join( transform.DOScale(
+			targetScale,
+			GameSettings.Instance.merge_jump_duration )
+			.SetEase( GameSettings.Instance.merge_jump_ease ) 
 		);
 
 		sequence.AppendInterval( GameSettings.Instance.merge_jump_delay );
@@ -105,11 +112,18 @@ public class Gun : MonoBehaviour
 	{
 		event_gun_fired.eventValue = gun_data.gun_damage;
 
-		recycledTween.Recycle( transform.DOMove( 
-			notif_gun_fire_position.sharedValue, 
+		var sequence = recycledSequence.Recycle( OnGunFireSequenceComplete );
+
+		sequence.Append( transform.DOMove(
+			notif_gun_fire_position.sharedValue,
 			GameSettings.Instance.gun_fire_move_duration )
-			.SetEase( GameSettings.Instance.gun_fire_move_ease ),
-			OnGunFireSequenceComplete
+			.SetEase( GameSettings.Instance.gun_fire_move_ease )
+		);
+
+		sequence.Join( transform.DOScale(
+			GameSettings.Instance.merge_size_final,
+			GameSettings.Instance.gun_fire_move_duration )
+			.SetEase( GameSettings.Instance.gun_fire_move_ease )
 		);
 	}
 #endregion

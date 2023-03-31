@@ -61,8 +61,8 @@ namespace FFStudio
 				levelFailedEvent.Raise();
             else
             {
-				event_gun_spawn.Raise();
 				event_selection_enable.Raise();
+				event_gun_spawn.Raise();
 			}
 		}
 #endregion

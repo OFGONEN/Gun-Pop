@@ -15,6 +15,9 @@ namespace FFStudio
 		[ LabelText( "Selection Delta" ) ] public float selection_delta;
 
     [ Title( "Gun" ) ]
+		[ LabelText( "Gun Fire Position Move Duration" ) ] public float gun_fire_move_duration;
+		[ LabelText( "Gun Fire Position Move Ease" ) ] public Ease gun_fire_move_ease;
+
     [ Title( "Merge" ) ]
 		[ LabelText( "Merge Min Count" ) ] public int merge_count;
 		[ LabelText( "Merge Jump Power" ) ] public float  merge_jump_power;

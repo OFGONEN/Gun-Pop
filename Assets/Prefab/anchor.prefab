@@ -68,7 +68,7 @@ MonoBehaviour:
   angUnitInput: 1
   angRadiansStart: 0
   angRadiansEnd: 2.3561945
-  radius: 1
+  radius: 0.4
   radiusSpace: 0
   thickness: 0.5
   thicknessSpace: 0

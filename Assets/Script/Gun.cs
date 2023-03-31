@@ -53,6 +53,7 @@ public class Gun : MonoBehaviour
 
 		transform.position = position;
 		gameObject.SetActive( true );
+		recycledTween.Recycle( GameSettings.Instance.gun_spawn_punchScale.CreateTween( transform ) );
 	}
 	
 	public void StartMerge()

@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool_gun: {fileID: 11400000, guid: e391d175f3e164116a8ab5b611ded178, type: 2}
   notif_gun_fire_position: {fileID: 11400000, guid: cc5553d34831f4d44aa45caf97c506a3, type: 2}
+  event_gun_fired: {fileID: 11400000, guid: e3b2d01ab16a34d18a54c71a03dc60d2, type: 2}
   gun_collider: {fileID: 8734325090023999906}
   gun_mesh_filter: {fileID: 5508560811287586383}
   gun_mesh_renderer: {fileID: 7752561476975448709}

@@ -13,6 +13,7 @@ public class Gun : MonoBehaviour
   [ Title( "Shared" ) ]
     [ SerializeField ] PoolGun pool_gun;
     [ SerializeField ] SharedVector3Notifier notif_gun_fire_position;
+	[ SerializeField ] IntGameEvent event_gun_fired;
 
   [ Title( "Components" ) ]
     [ SerializeField ] Collider gun_collider;
@@ -79,10 +80,13 @@ public class Gun : MonoBehaviour
 
 	public void DoFire()
 	{
+		event_gun_fired.eventValue = gun_data.gun_damage;
+
 		recycledTween.Recycle( transform.DOMove( 
 			notif_gun_fire_position.sharedValue, 
 			GameSettings.Instance.gun_fire_move_duration )
-			.SetEase( GameSettings.Instance.gun_fire_move_ease )
+			.SetEase( GameSettings.Instance.gun_fire_move_ease ),
+			event_gun_fired.Raise
 		);
 	}
 #endregion

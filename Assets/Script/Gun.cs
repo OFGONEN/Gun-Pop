@@ -25,7 +25,8 @@ public class Gun : MonoBehaviour
     GunVisualData gun_visual_data;
     Anchor gun_anchor;
 
-	RecycledTween recycledTween = new RecycledTween();
+	RecycledTween    recycledTween    = new RecycledTween();
+	RecycledSequence recycledSequence = new RecycledSequence();
 #endregion
 
 #region Properties
@@ -63,6 +64,29 @@ public class Gun : MonoBehaviour
 
 	public void DoMerge( Gun target, UnityMessage onMergeDone )
 	{
+		var targetPosition = target.transform.position;
+
+		var sequence = recycledSequence.Recycle( onMergeDone );
+		sequence.Append( transform.DOMoveX(
+			targetPosition.x,
+			GameSettings.Instance.merge_jump_duration )
+			.SetEase( GameSettings.Instance.merge_jump_ease )
+		);
+
+		sequence.Join( transform.DOMoveY(
+			targetPosition.y,
+			GameSettings.Instance.merge_jump_duration )
+			.SetEase( GameSettings.Instance.merge_jump_ease )
+		);
+
+		sequence.Join( transform.DOMoveZ(
+			-GameSettings.Instance.merge_jump_power,
+			GameSettings.Instance.merge_jump_duration )
+			.SetEase( GameSettings.Instance.merge_jump_ease )
+		);
+
+		sequence.AppendInterval( GameSettings.Instance.merge_jump_delay );
+
 		recycledTween.Recycle( transform.DOJump(
 			target.transform.position,
 			GameSettings.Instance.merge_jump_power,

@@ -66,14 +66,12 @@ public class Gun : MonoBehaviour
 
 	public void OnMerged()
 	{
-		//disable
-		// gun_anchor.RemoveGun
+		gun_anchor.OnGunMerged();
 		pool_gun.ReturnEntity( this );
 	}
 
 	public void DoUpgrade()
 	{
-		// upgrade to new gun model
 		gun_data = gun_data.gun_nextData;
 		UpdateVisual();
 	}

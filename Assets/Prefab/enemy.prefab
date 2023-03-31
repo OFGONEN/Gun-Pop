@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notif_level_progress: {fileID: 11400000, guid: 43438d720c16f2e4aa5a19d520e1e15f, type: 2}
-  event_enemy_damaged: {fileID: 11400000, guid: 6787e2bc1c5f84e53b915f891dcfc159, type: 2}
-  event_enemy_died: {fileID: 11400000, guid: 1d3cbfd95f2744b2d863378cf3122804, type: 2}
+  event_enemy_damaged: {fileID: 11400000, guid: 1d3cbfd95f2744b2d863378cf3122804, type: 2}
+  event_enemy_died: {fileID: 11400000, guid: 6787e2bc1c5f84e53b915f891dcfc159, type: 2}
 --- !u!1 &6231923398940507076
 GameObject:
   m_ObjectHideFlags: 0

@@ -53,6 +53,11 @@ public class Gun : MonoBehaviour
 		transform.position = position;
 		gameObject.SetActive( true );
 	}
+	
+	public void StartMerge()
+	{
+		gun_anchor.OnGunMerged();
+	}
 
 	public void DoMerge( Gun target, UnityMessage onMergeDone )
 	{

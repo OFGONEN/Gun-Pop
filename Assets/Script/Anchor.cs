@@ -42,12 +42,17 @@ public class Anchor : MonoBehaviour
 	{
 		set_anchor.RemoveDictionary( anchor_coordinate.GetUniqueHashCode_PositiveIntegers() );
 	}
+
+	void Start()
+	{
+		SpawnGun();
+	}
 #endregion
 
 #region API
 	public void OnLevelStart()
 	{
-		SpawnGun();
+		// SpawnGun();
 	}
 
 	public void SpawnGun()

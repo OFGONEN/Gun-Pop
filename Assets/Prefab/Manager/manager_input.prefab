@@ -312,7 +312,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 0319569f300b14f599866f2b50df6392, type: 2}
         m_TargetAssemblyTypeName: FFStudio.Vector2GameEvent, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Raise
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

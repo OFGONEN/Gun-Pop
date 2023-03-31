@@ -21,7 +21,7 @@ public class Anchor : MonoBehaviour
     [ SerializeField, ReadOnly ] Vector2Int anchor_coordinate;
     [ SerializeField, ReadOnly ] bool anchor_topMost;
 
-	Gun gun_current;
+	Gun gun_current = null;
 #endregion
 
 #region Properties
@@ -49,16 +49,24 @@ public class Anchor : MonoBehaviour
 	{
 		SpawnGun();
 	}
-#endregion
 
-#region Implementation
-	void SpawnGun()
+	public void SpawnGun()
 	{
+		if( gun_current != null ) return;
+
 		var spawnData = system_spawn.GetGunSpawnData();
 		spawnData.Item1.Spawn( transform.position, this, spawnData.Item2, spawnData.Item3 );
 
 		gun_current = spawnData.Item1;
 	}
+
+	public void OnGunMerged()
+	{
+		gun_current = null;
+	}
+#endregion
+
+#region Implementation
 #endregion
 
 #region Editor Only

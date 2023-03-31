@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selection_layer: 31
   selection_delta: 100
+  merge_count: 3
+  merge_jump_power: 0.1
+  merge_jump_duration: 0.25
+  merge_jump_ease: 12
   camera_follow_speed_depth: 2.8
   game_level_count_max: 1
   game_level_count_min: 1

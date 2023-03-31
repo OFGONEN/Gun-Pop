@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun_level: 3
   gun_damage: 3
-  gun_nextData: {fileID: 11400000}
+  gun_nextData: {fileID: 11400000, guid: 90bc803cab586be4c86fd3de4b623d2c, type: 2}

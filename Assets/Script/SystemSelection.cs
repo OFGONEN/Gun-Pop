@@ -10,12 +10,19 @@ using Sirenix.OdinInspector;
 public class SystemSelection : ScriptableObject
 {
 #region Fields
-  [ Title( "Shared" ) ]
-    [ SerializeField ] SharedReferenceNotifier notif_camera_reference;
-    [ SerializeField ] RaycastHitGameEvent event_selection_gun;
+  [ Title( "Events" ) ]
+    [ SerializeField ] GunGameEvent event_selection_gun_inital;
+    [ SerializeField ] GunGameEvent event_selection_gun_new;
+	[ SerializeField ] GameEvent event_selection_gun_deselect;
+	[ SerializeField ] GameEvent event_selection_complete;
     [ SerializeField ] RaycastHitGameEvent event_selection_ground;
 
-	Vector2Delegate onFinger;
+  [ Title( "Shared" ) ]
+    [ SerializeField ] SharedReferenceNotifier notif_camera_reference;
+	[ SerializeField ] RunTimeSetGun set_gun;
+
+	Vector2Delegate onFingerUpdate = Extensions.EmptyMethod;
+	UnityMessage    onFingerUp     = Extensions.EmptyMethod;
 	Camera _camera;
 #endregion
 
@@ -30,29 +37,48 @@ public class SystemSelection : ScriptableObject
     {
         _camera = ( notif_camera_reference.sharedValue as Transform ).GetComponent< Camera >();
 
-		onFinger = FingerDown;
+		OnEnableSelection();
 	}
 
 	public void OnFingerUpdate( Vector2 screenPosition )
 	{
-		onFinger( screenPosition );
+		onFingerUpdate( screenPosition );
 	}
 
 	public void OnFingerUp()
 	{
-		onFinger = FingerDown;
+		onFingerUp();
+	}
+
+	public void OnEnableSelection()
+	{
+		onFingerUpdate = FingerDown;
+		set_gun.itemList.Clear();
 	}
 #endregion
 
 #region Implementation
+	void FingerUp()
+	{
+		onFingerUpdate = Extensions.EmptyMethod;
+		onFingerUp     = Extensions.EmptyMethod;
+
+		event_selection_complete.Raise();
+	}
+
 	void FingerDown( Vector2 screenPosition )
 	{
 		var hit = TryToSelect( screenPosition );
 
 		if( hit.collider.tag == "Gun" )
 		{
-			event_selection_gun.Raise( hit.point, hit.collider );
-			onFinger = FingerUpdate;
+			var gun = hit.collider.GetComponent< ComponentHost >().HostComponent as Gun;
+
+			set_gun.itemList.Add( gun );
+			event_selection_gun_inital.Raise( gun );
+
+			onFingerUpdate = FingerUpdate;
+			onFingerUp     = FingerUp;
 		}
 	}
 
@@ -61,7 +87,37 @@ public class SystemSelection : ScriptableObject
 		var hit = TryToSelect( screenPosition );
 
 		if( hit.collider.tag == "Gun" )
-			event_selection_gun.Raise( hit.point, hit.collider );
+		{
+			var gun = hit.collider.GetComponent< ComponentHost >().HostComponent as Gun;
+
+			if( gun != set_gun.itemList.PeekLastItem() && gun == set_gun.itemList.PeekPenultimateItem() ) // Deselect last selected gun
+			{
+				set_gun.itemList.RemoveLastItem();
+				event_selection_gun_deselect.Raise();
+			}
+			else
+			{
+				for( var i = 0; i < set_gun.itemList.Count; i++ )
+				{
+					if( set_gun.itemList[ i ] == gun )
+					{
+						event_selection_ground.Raise( hit.point, hit.collider );
+						return; // Do nothing
+					}
+				}
+
+				var lastSelectedGun = set_gun.itemList.PeekLastItem();
+				var distance        = lastSelectedGun.AnchorCoordiante - gun.AnchorCoordiante;
+
+				if( gun.GunVisualData == lastSelectedGun.GunVisualData && Mathf.Abs( distance.x ) <= 1 && Mathf.Abs( distance.y ) <= 1 ) // New and Same Colored Gun, select it.
+				{
+					set_gun.itemList.Add( gun );
+					event_selection_gun_new.Raise( gun );
+				}
+				else
+					event_selection_ground.Raise( hit.point, hit.collider );
+			}
+		}
 		else
 			event_selection_ground.Raise( hit.point, hit.collider );
 	}

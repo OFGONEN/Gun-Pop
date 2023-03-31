@@ -107,6 +107,14 @@ namespace FFStudio
 		}
 	}
 
+	public class GunGameEventResponse : GenericEventListenerGenericUnityEventResponse< GunGameEvent, Gun >
+	{
+		protected override void OnEventResponse()
+		{
+			unityEvent.Invoke( gameEvent.event_value );
+		}
+	}
+
 	public class ReferenceGameEventResponse : GenericEventListenerGenericUnityEventResponse< ReferenceGameEvent, object >
 	{
 		protected override void OnEventResponse()

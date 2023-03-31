@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e60f6a31853642feacf8f9a8d131685, type: 3}
-  m_Name: event_selection_gun
+  m_Script: {fileID: 11500000, guid: 30ab7922295204a04a91bfea63bfcb92, type: 3}
+  m_Name: event_selection_gun_initial
   m_EditorClassIdentifier: 
   canRaiseOtherEvents: 0
   eventsThatWillAlsoBeRaised: []
-  hit_position: {x: 0, y: 0, z: 0}
-  hit_collider: {fileID: 0}
+  event_value: {fileID: 0}

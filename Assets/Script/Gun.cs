@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FFStudio;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 
 public class Gun : MonoBehaviour
@@ -20,6 +21,8 @@ public class Gun : MonoBehaviour
     GunData gun_data;
     GunVisualData gun_visual_data;
     Anchor gun_anchor;
+
+	RecycledTween recycledTween = new RecycledTween();
 #endregion
 
 #region Properties
@@ -42,11 +45,42 @@ public class Gun : MonoBehaviour
 		gun_visual_data = gunVisualData;
 		gun_anchor      = anchor;
 
-		gun_collider.enabled = false;
+		gun_collider.enabled = true;
 		UpdateVisual();
 
 		transform.position = position;
 		gameObject.SetActive( true );
+	}
+
+	public void DoMerge( Gun target, UnityMessage onMergeDone )
+	{
+		recycledTween.Recycle( transform.DOJump(
+			target.transform.position,
+			GameSettings.Instance.merge_jump_power,
+			1,
+			GameSettings.Instance.merge_jump_duration )
+			.SetEase( GameSettings.Instance.merge_jump_ease ),
+			onMergeDone
+		);
+	}
+
+	public void OnMerged()
+	{
+		//disable
+		// gun_anchor.RemoveGun
+		pool_gun.ReturnEntity( this );
+	}
+
+	public void DoUpgrade()
+	{
+		// upgrade to new gun model
+		gun_data = gun_data.gun_nextData;
+		UpdateVisual();
+	}
+
+	public void DoFire()
+	{
+		recycledTween.Recycle( transform.DOMove( Vector3.zero.SetY( 1f ), 0.25f ).SetEase( Ease.OutQuart ) );
 	}
 #endregion
 

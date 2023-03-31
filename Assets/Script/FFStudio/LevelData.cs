@@ -16,9 +16,11 @@ namespace FFStudio
         [ LabelText( "Override As Active Scene" ) ] public bool scene_overrideAsActiveScene;
 
 	[ Title( "Level" ) ]
+		[ LabelText( "Level Size " ) ] public Vector2Int level_size;
+		[ LabelText( "Move Count " ) ] public int level_moveCount;
+		[ LabelText( "Enemy Health" ) ] public int enemy_health;
 		[ LabelText( "Gun Color Data Percentage " ) ] public DataPercentageGunColorData[] data_gunColor_percentage_array;
 		[ LabelText( "Gun Data Percentage " ) ] public DataPercentageGunData[] data_gun_percentage_array;
-		[ LabelText( "Level Size " ) ] public Vector2Int level_size;
 
 #if UNITY_EDITOR
 		static IEnumerable SceneList()

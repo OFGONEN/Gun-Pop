@@ -12,13 +12,10 @@ public class SystemSelectionLine : ScriptableObject
 #region Fields
   [ Title( "Shared" ) ]
     [ SerializeField ] PoolSelectionLine pool_selection_line;
+	[ SerializeField ] RunTimeSetGun set_gun;
 
     SelectionLine selection_line;
-	UnityMessage onFingerUp = Extensions.EmptyMethod;
-	RaycastHitDataMessage onGunSelected;
-
-	List< Gun > selection_gun_list = new List< Gun >( 16 );
-	List< SelectionLine > selection_line_list = new List< SelectionLine >( 16 );
+	[ ShowInInspector, ReadOnly ] List< SelectionLine > selection_line_list;
 #endregion
 
 #region Properties
@@ -28,14 +25,9 @@ public class SystemSelectionLine : ScriptableObject
 #endregion
 
 #region API
-    public void Init()
-    {
-		onGunSelected = FirstGunSelected;
-	}
-    
-    public void OnGunSelected( RaycastHitData data )
-    {
-		onGunSelected( data );
+	public void Init()
+	{
+		selection_line_list = new List< SelectionLine >( 16 );
 	}
 
     public void OnEnvironmentSelected( RaycastHitData data )
@@ -43,59 +35,46 @@ public class SystemSelectionLine : ScriptableObject
 		selection_line.UpdateLine( data.hit_position );
 	}
 
-    public void OnFingerUp()
+    public void OnSelectionGunInitial( Gun gun )
     {
-		onFingerUp();
+		SpawnLineOnGun( gun );
+	}
+
+	public void OnSelectionGunNew( Gun gun )
+	{
+		selection_line.Despawn();
+
+		SpawnLineBetweenGuns( set_gun.itemList.PeekPenultimateItem(), gun );
+		SpawnLineOnGun( gun );
+	}
+
+	public void OnSelectionGunDeselect()
+	{
+		selection_line_list.ReturnLastItem().Despawn();
+		selection_line.ChangePosition( set_gun.itemList.PeekLastItem().transform.position, selection_line.EndPosition );
+	}
+
+	public void OnSelectionLineDespawn()
+	{
+		selection_line_list[ 0 ].Despawn();
+		selection_line_list.RemoveAt( 0 );
+	}
+
+	public void OnSelectionComplete()
+	{
+		selection_line.Despawn();
+	}
+
+	public void OnSelectionEnable()
+	{
+        foreach( var line in selection_line_list )
+			line.Despawn();
+
+		selection_line_list.Clear();
 	}
 #endregion
 
 #region Implementation
-    void FirstGunSelected( RaycastHitData data )
-    {
-        var gun  = data.hit_collider.GetComponent< ComponentHost >().HostComponent as Gun;
-
-		selection_gun_list.Add( gun );
-		SpawnLineOnGun( gun );
-
-		onFingerUp    = DespawnLines;
-		onGunSelected = NewGunSelected;
-	}
-
-    void NewGunSelected( RaycastHitData data )
-    {
-        var newGun           = data.hit_collider.GetComponent< ComponentHost >().HostComponent as Gun;
-
-		if( newGun == selection_gun_list.PeekPenultimateItem() ) // Equals to Penultimate, Deselect last gun
-		{
-			selection_line_list.ReturnLastItem().Despawn();
-			selection_gun_list.RemoveLastItem();
-
-			var gun = selection_gun_list.PeekLastItem();
-			selection_line.ChangePosition( gun.transform.position, selection_line.EndPosition );
-		}
-		else // It can be new gun or a gun that is already selected
-		{
-			for( var i = 0; i < selection_gun_list.Count; i++ )
-			{
-				if( selection_gun_list[ i ] == newGun )
-					return; // Do nothing
-			}
-
-			var lastSelectedGun = selection_gun_list.PeekLastItem();
-			var distance        = lastSelectedGun.AnchorCoordiante - newGun.AnchorCoordiante;
-
-			if( newGun.GunVisualData == lastSelectedGun.GunVisualData && Mathf.Abs( distance.x ) <= 1 && Mathf.Abs( distance.y ) <= 1 ) // New and Same Colored Gun, select it.
-			{
-				selection_line.Despawn();
-
-				SpawnLineBetweenGuns( lastSelectedGun, newGun );
-				SpawnLineOnGun( newGun );
-
-				selection_gun_list.Add( newGun );
-			}
-		}
-    }
-
     void SpawnLineOnGun( Gun gun )
     {
 		var selectionLine = pool_selection_line.GetEntity();
@@ -112,20 +91,6 @@ public class SystemSelectionLine : ScriptableObject
 		selectionLine.UpdateLine( end.transform.position );
 
 		selection_line_list.Add( selectionLine );
-	}
-
-    void DespawnLines()
-    {
-		onFingerUp    = Extensions.EmptyMethod;
-		onGunSelected = FirstGunSelected;
-
-		selection_line.Despawn();
-
-        foreach( var line in selection_line_list )
-			line.Despawn();
-
-		selection_line_list.Clear();
-		selection_gun_list.Clear();
 	}
 #endregion
 

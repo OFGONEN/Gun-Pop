@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efd7a3ddc29a4939b75247578a9b035, type: 3}
-  m_Name: gun_data_2
+  m_Script: {fileID: 11500000, guid: a2c4e783e43fe4f4fa08e6785f264a60, type: 3}
+  m_Name: event_selection_enable
   m_EditorClassIdentifier: 
-  gun_level: 2
-  gun_damage: 2
-  gun_nextData: {fileID: 11400000, guid: 1c9142f50d2a3854f86091b2c7f3a54a, type: 2}
+  canRaiseOtherEvents: 0
+  eventsThatWillAlsoBeRaised: []

@@ -99,7 +99,7 @@ public class Gun : MonoBehaviour
 #region Implementation
     void UpdateVisual()
     {
-		var visualData = gun_visual_data.gun_model_data_array[ Mathf.Min( gun_data.gun_level, gun_visual_data.gun_model_data_array.Length - 1 ) ];
+		var visualData = gun_visual_data.gun_model_data_array[ Mathf.Clamp( gun_data.gun_level - 1, 0, gun_visual_data.gun_model_data_array.Length - 1 ) ];
 
 		gun_mesh_filter.mesh             = visualData.gun_model_mesh;
 		gun_mesh_renderer.sharedMaterial = visualData.gun_model_material;

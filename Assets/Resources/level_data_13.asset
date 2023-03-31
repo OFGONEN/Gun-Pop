@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene_index: 13
   scene_overrideAsActiveScene: 0
+  level_size: {x: 7, y: 8}
+  level_moveCount: 10
+  enemy_health: 30
   data_gunColor_percentage_array:
   - data_percentage: 33
     data: {fileID: 11400000, guid: 87ea8538458e845fdab0b1a1d7abcb22, type: 2}
@@ -28,4 +31,3 @@ MonoBehaviour:
     data: {fileID: 11400000, guid: 72070bbb799e84473aeafdb18bc2087f, type: 2}
   - data_percentage: 5
     data: {fileID: 11400000, guid: 1c9142f50d2a3854f86091b2c7f3a54a, type: 2}
-  level_size: {x: 7, y: 8}

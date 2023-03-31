@@ -814,7 +814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 983236533605705146, guid: f87cd3ae107914e0e8aa547504c7b96b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 983236533605705146, guid: f87cd3ae107914e0e8aa547504c7b96b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3813,15 +3813,12 @@ MonoBehaviour:
     - {fileID: 1125854567}
     - {fileID: 1765935626}
     - {fileID: 1625509050}
-    - {fileID: 0}
-    - {fileID: 0}
     - {fileID: 1124438424}
     - {fileID: 1122000878}
     - {fileID: 1658960075}
     - {fileID: 98212598}
     - {fileID: 1542745404}
     - {fileID: 2082866415}
-    - {fileID: 0}
     - {fileID: 1868904963}
     - {fileID: 361842596}
     - {fileID: 1534928775}
@@ -3842,14 +3839,11 @@ MonoBehaviour:
     - {fileID: 1192590373}
     - {fileID: 1168098924}
     - {fileID: 966271323}
-    - {fileID: 0}
     - {fileID: 1809379971}
     - {fileID: 1379970258}
     - {fileID: 1420665108}
     - {fileID: 863923478}
     - {fileID: 80503003}
-    - {fileID: 0}
-    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -4021,6 +4015,12 @@ MonoBehaviour:
       Entry: 10
       Data: 4
     - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
       Entry: 10
       Data: 5
     - Name: 
@@ -4038,6 +4038,9 @@ MonoBehaviour:
     - Name: 
       Entry: 10
       Data: 10
+    - Name: 
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 10
       Data: 11
@@ -4099,6 +4102,9 @@ MonoBehaviour:
       Entry: 10
       Data: 30
     - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
       Entry: 10
       Data: 31
     - Name: 
@@ -4114,23 +4120,11 @@ MonoBehaviour:
       Entry: 10
       Data: 35
     - Name: 
-      Entry: 10
-      Data: 36
+      Entry: 6
+      Data: 
     - Name: 
-      Entry: 10
-      Data: 37
-    - Name: 
-      Entry: 10
-      Data: 38
-    - Name: 
-      Entry: 10
-      Data: 39
-    - Name: 
-      Entry: 10
-      Data: 40
-    - Name: 
-      Entry: 10
-      Data: 41
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 13
       Data: 

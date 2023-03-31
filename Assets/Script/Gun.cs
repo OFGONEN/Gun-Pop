@@ -91,12 +91,18 @@ public class Gun : MonoBehaviour
 			notif_gun_fire_position.sharedValue, 
 			GameSettings.Instance.gun_fire_move_duration )
 			.SetEase( GameSettings.Instance.gun_fire_move_ease ),
-			event_gun_fired.Raise
+			OnGunFireSequenceComplete
 		);
 	}
 #endregion
 
 #region Implementation
+	void OnGunFireSequenceComplete()
+	{
+		event_gun_fired.Raise();
+		pool_gun.ReturnEntity( this );
+	}
+
     void UpdateVisual()
     {
 		var visualData = gun_visual_data.gun_model_data_array[ Mathf.Clamp( gun_data.gun_level - 1, 0, gun_visual_data.gun_model_data_array.Length - 1 ) ];

@@ -17,6 +17,7 @@ namespace FFStudio
     [ Title( "Gun" ) ]
 		[ LabelText( "Gun Fire Position Move Duration" ) ] public float gun_fire_move_duration;
 		[ LabelText( "Gun Fire Position Move Ease" ) ] public Ease gun_fire_move_ease;
+		[ LabelText( "Gun Fire Position Move Ease" ) ] public PunchScaleTween gun_spawn_punchScale;
 
     [ Title( "Merge" ) ]
 		[ LabelText( "Merge Min Count" ) ] public int merge_count;

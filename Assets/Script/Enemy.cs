@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
     public void OnGunFire( int damage )
     {
 		health_current                   = Mathf.Max( health_current - damage,  0 );
-		notif_level_progress.SharedValue = Mathf.InverseLerp( CurrentLevelData.Instance.levelData.enemy_health, 0, health_current );
+		notif_level_progress.SharedValue = Mathf.InverseLerp( 0, CurrentLevelData.Instance.levelData.enemy_health, health_current );
 
         if( health_current > 0 )
 			event_enemy_damaged.Raise();

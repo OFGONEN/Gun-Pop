@@ -86,15 +86,6 @@ public class Gun : MonoBehaviour
 		);
 
 		sequence.AppendInterval( GameSettings.Instance.merge_jump_delay );
-
-		recycledTween.Recycle( transform.DOJump(
-			target.transform.position,
-			GameSettings.Instance.merge_jump_power,
-			1,
-			GameSettings.Instance.merge_jump_duration )
-			.SetEase( GameSettings.Instance.merge_jump_ease ),
-			onMergeDone
-		);
 	}
 
 	public void OnMerged()
@@ -126,8 +117,8 @@ public class Gun : MonoBehaviour
 #region Implementation
 	void OnGunFireSequenceComplete()
 	{
-		event_gun_fired.Raise();
 		pool_gun.ReturnEntity( this );
+		event_gun_fired.Raise();
 	}
 
     void UpdateVisual()

@@ -23,9 +23,9 @@ MonoBehaviour:
     elasticity: 1
     ease: 12
   merge_count: 3
-  merge_jump_power: 2
-  merge_jump_duration: 0.45
-  merge_jump_delay: 0.1
+  merge_jump_power: 1.5
+  merge_jump_duration: 0.25
+  merge_jump_delay: 0.025
   merge_jump_ease: 12
   camera_follow_speed_depth: 2.8
   game_level_count_max: 1

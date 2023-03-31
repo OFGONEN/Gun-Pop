@@ -21,7 +21,7 @@ public class Anchor : MonoBehaviour
     [ SerializeField, ReadOnly ] Vector2Int anchor_coordinate;
     [ SerializeField, ReadOnly ] bool anchor_topMost;
 
-	Gun gun_current = null;
+	[ ShowInInspector, ReadOnly ] Gun gun_current = null;
 #endregion
 
 #region Properties

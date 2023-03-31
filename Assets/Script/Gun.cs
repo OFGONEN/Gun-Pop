@@ -14,6 +14,7 @@ public class Gun : MonoBehaviour
     [ SerializeField ] PoolGun pool_gun;
     [ SerializeField ] SharedVector3Notifier notif_gun_fire_position;
 	[ SerializeField ] IntGameEvent event_gun_fired;
+	[ SerializeField ] ParticleSpawnEvent event_particle_spawn;
 
   [ Title( "Components" ) ]
     [ SerializeField ] Collider gun_collider;
@@ -80,6 +81,7 @@ public class Gun : MonoBehaviour
 	public void DoUpgrade()
 	{
 		gun_data = gun_data.gun_nextData;
+		event_particle_spawn.Raise( "gun_upgrade", transform.position );
 		UpdateVisual();
 	}
 

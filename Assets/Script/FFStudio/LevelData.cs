@@ -21,6 +21,9 @@ namespace FFStudio
 		[ LabelText( "Enemy Health" ) ] public int enemy_health;
 		[ LabelText( "Gun Color Data Percentage " ) ] public DataPercentageGunColorData[] data_gunColor_percentage_array;
 		[ LabelText( "Gun Data Percentage " ) ] public DataPercentageGunData[] data_gun_percentage_array;
+		
+	[ Title( "Graphics" ) ]
+		[ LabelText( "Background Color" ) ] public Color background_color = new Color( 83.0f / 255.0f, 150.0f / 255.0f, 212.0f / 255.0f );
 
 #if UNITY_EDITOR
 		static IEnumerable SceneList()

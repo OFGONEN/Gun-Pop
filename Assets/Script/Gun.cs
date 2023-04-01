@@ -53,7 +53,9 @@ public class Gun : MonoBehaviour
 		gun_collider.enabled = true;
 		UpdateVisual();
 
-		transform.position = position;
+		transform.position   = position;
+		transform.localScale = Vector3.one;
+
 		gameObject.SetActive( true );
 		recycledTween.Recycle( GameSettings.Instance.gun_spawn_punchScale.CreateTween( transform ) );
 	}

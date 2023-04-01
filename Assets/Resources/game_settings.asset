@@ -26,6 +26,14 @@ MonoBehaviour:
     vibrato: 10
     elasticity: 1
     ease: 12
+  enemy_move_duration: 0.25
+  enemy_move_ease: 12
+  enemy_damage_punchScale:
+    strength: {x: 1, y: 1, z: 1}
+    duration: 1
+    vibrato: 10
+    elasticity: 1
+    ease: 12
   merge_count: 3
   merge_size_final: 2
   merge_size_step: 0.1

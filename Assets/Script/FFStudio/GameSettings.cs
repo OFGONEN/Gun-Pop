@@ -23,6 +23,11 @@ namespace FFStudio
 		[ LabelText( "Gun Fire Sequence End Delay" ) ] public float gun_fire_sequence_end_delay;
 		[ LabelText( "Gun Spawn Punch Scale" ) ] public PunchScaleTween gun_spawn_punchScale;
 
+    [ Title( "Enemy" ) ]
+		[ LabelText( "Enemy Move Duration" ) ] public float enemy_move_duration;
+		[ LabelText( "Enemy Move Ease" ) ] public Ease enemy_move_ease;
+		[ LabelText( "Enemy Damage Punch Scale" ) ] public PunchScaleTween enemy_damage_punchScale;
+
     [ Title( "Merge" ) ]
 		[ LabelText( "Merge Min Count" ) ] public int merge_count;
 		[ LabelText( "Merge Size Final" ) ] public float merge_size_final;

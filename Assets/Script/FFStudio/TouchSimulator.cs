@@ -15,6 +15,7 @@ public class TouchSimulator : MonoBehaviour
 	[ SerializeField ] private Texture2D texture_hand;
     
     [ SerializeField, LabelText( "Scale on Click" ) ] Vector2 scale_onClick = Vector2.one;
+    [ SerializeField, LabelText( "Offset" ) ] Vector2 offset = Vector2.zero;
 
 	private LeanTouch cachedTouch;
 
@@ -61,7 +62,7 @@ public class TouchSimulator : MonoBehaviour
 
 			var screenRect = new Rect( 0, 0, FingerTexture.width * scale.x, yScale );
 
-			screenRect.center = new Vector2( screenPosition.x, Screen.height - screenPosition.y + yScale / 2.0f );
+			screenRect.center = new Vector2( screenPosition.x, Screen.height - screenPosition.y + yScale / 2.0f ) + offset;
 
 			GUI.DrawTexture( screenRect, FingerTexture );
             
@@ -117,6 +118,7 @@ namespace Lean.Touch.Editor
 
 			Draw( "texture_hand", "This allows you to set which texture will be used to show the cursor." );
 			Draw( "scale_onClick", "This allows you to set the scale the texture will be shrinked to upon clicking the left mouse button." );
+			Draw( "offset", "Offset of the finger." );
 		}
 
 		private static void HandleExtendInspector( LeanTouch touch )

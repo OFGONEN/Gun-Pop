@@ -13,6 +13,7 @@ public class Gun : MonoBehaviour
   [ Title( "Shared" ) ]
     [ SerializeField ] PoolGun pool_gun;
     [ SerializeField ] SharedVector3Notifier notif_gun_fire_position;
+	[ SerializeField ] GameEvent event_gun_fire_start;
 	[ SerializeField ] IntGameEvent event_gun_fired;
 	[ SerializeField ] ParticleSpawnEvent event_particle_spawn;
 
@@ -110,6 +111,7 @@ public class Gun : MonoBehaviour
 
 	public void DoFire()
 	{
+		event_gun_fire_start.Raise();
 		event_gun_fired.eventValue = gun_data.gun_damage;
 
 		var sequence = recycledSequence.Recycle( OnGunFireSequenceComplete );
@@ -125,6 +127,14 @@ public class Gun : MonoBehaviour
 			GameSettings.Instance.gun_fire_move_duration )
 			.SetEase( GameSettings.Instance.gun_fire_move_ease )
 		);
+
+		sequence.Append( transform.DOShakePosition(
+			GameSettings.Instance.gun_fire_shake_duration )
+			.SetEase( GameSettings.Instance.gun_fire_shake_ease )
+			.SetLoops( GameSettings.Instance.gun_fire_shake_count_range.ReturnRandom(), LoopType.Yoyo )
+		);
+
+		sequence.AppendInterval( GameSettings.Instance.gun_fire_sequence_end_delay );
 	}
 #endregion
 

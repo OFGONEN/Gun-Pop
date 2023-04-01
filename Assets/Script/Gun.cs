@@ -155,7 +155,7 @@ public class Gun : MonoBehaviour
 
 	void OnGunFireStep()
 	{
-		event_particle_spawn.Raise( "gun_fire", transform.position + gun_data.gun_fire_pfx_offset, transform );
+		event_particle_spawn.Raise( "gun_fire", transform.position + gun_data.gun_fire_pfx_offset * GameSettings.Instance.merge_size_final, transform );
 	}
 
     void UpdateVisual()

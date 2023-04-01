@@ -10,6 +10,33 @@ namespace FFStudio
     {
 #region Fields (Settings)
     // Info: You can use Title() attribute ONCE for every game-specific group of settings.
+    [ Title( "Selection System" ) ]
+		[ LabelText( "Selection Layer" ), Layer() ] public int selection_layer;
+		[ LabelText( "Selection Delta" ) ] public float selection_delta;
+
+    [ Title( "Gun" ) ]
+		[ LabelText( "Gun Fire Position Move Duration" ) ] public float gun_fire_move_duration;
+		[ LabelText( "Gun Fire Position Move Ease" ) ] public Ease gun_fire_move_ease;
+		[ LabelText( "Gun Fire Position Shake Duration" ) ] public float gun_fire_shake_duration;
+		[ LabelText( "Gun Fire Position Shake Power" ) ] public float gun_fire_shake_power;
+		[ LabelText( "Gun Fire Position Shake Ease" ) ] public Ease gun_fire_shake_ease;
+		[ LabelText( "Gun Fire Position Shake Loop Count Range" ) ] public Vector2Int gun_fire_shake_count_range;
+		[ LabelText( "Gun Fire Sequence End Delay" ) ] public float gun_fire_sequence_end_delay;
+		[ LabelText( "Gun Spawn Punch Scale" ) ] public PunchScaleTween gun_spawn_punchScale;
+
+    [ Title( "Enemy" ) ]
+		[ LabelText( "Enemy Move Duration" ) ] public float enemy_move_duration;
+		[ LabelText( "Enemy Move Ease" ) ] public Ease enemy_move_ease;
+		[ LabelText( "Enemy Damage Punch Scale" ) ] public PunchScaleTween enemy_damage_punchScale;
+
+    [ Title( "Merge" ) ]
+		[ LabelText( "Merge Min Count" ) ] public int merge_count;
+		[ LabelText( "Merge Size Final" ) ] public float merge_size_final;
+		[ LabelText( "Merge Size Step" ) ] public float merge_size_step;
+		[ LabelText( "Merge Jump Power" ) ] public float  merge_jump_power;
+		[ LabelText( "Merge Jump Duration" ) ] public float  merge_jump_duration;
+		[ LabelText( "Merge Jump Delay" ) ] public float  merge_jump_delay;
+		[ LabelText( "Merge Jump Ease" ) ] public Ease merge_jump_ease;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;

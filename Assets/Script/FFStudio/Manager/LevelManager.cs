@@ -11,9 +11,12 @@ namespace FFStudio
         [ Header( "Fired Events" ) ]
         public GameEvent levelFailedEvent;
         public GameEvent levelCompleted;
+        public GameEvent event_selection_enable;
+        public GameEvent event_gun_spawn;
 
         [ Header( "Level Releated" ) ]
         public SharedProgressNotifier notifier_progress;
+        public SharedIntNotifier notif_move_count;
 #endregion
 
 #region UnityAPI
@@ -29,6 +32,8 @@ namespace FFStudio
 				SceneManager.SetActiveScene( SceneManager.GetSceneAt( 1 ) );
             else
 				SceneManager.SetActiveScene( SceneManager.GetSceneAt( 0 ) );
+
+			notif_move_count.SharedValue = CurrentLevelData.Instance.levelData.level_moveCount;
 		}
 
         // Info: Called from Editor.
@@ -42,6 +47,24 @@ namespace FFStudio
         {
 
         }
+
+        public void OnEnemyDied()
+        {
+			levelCompleted.Raise();
+		}
+
+        public void OnEnemyDamaged()
+        {
+			notif_move_count.SharedValue -= 1;
+
+            if( notif_move_count.sharedValue <= 0 )
+				levelFailedEvent.Raise();
+            else
+            {
+				event_selection_enable.Raise();
+				event_gun_spawn.Raise();
+			}
+		}
 #endregion
 
 #region Implementation

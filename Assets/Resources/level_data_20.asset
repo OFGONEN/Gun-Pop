@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea3c0b9fd00fd441b6cebc5941ee13b, type: 3}
+  m_Name: level_data_20
+  m_EditorClassIdentifier: 
+  scene_index: 20
+  scene_overrideAsActiveScene: 0
+  level_size: {x: 7, y: 8}
+  level_moveCount: 9999999
+  enemy_health: 50
+  data_gunColor_percentage_array:
+  - data_percentage: 33
+    data: {fileID: 11400000, guid: d0bbeeb45fa47410e9ed730a8d4e580d, type: 2}
+  - data_percentage: 33
+    data: {fileID: 11400000, guid: 87ea8538458e845fdab0b1a1d7abcb22, type: 2}
+  - data_percentage: 34
+    data: {fileID: 11400000, guid: 9f3daea3098504d69b479a9936b78b1a, type: 2}
+  data_gun_percentage_array:
+  - data_percentage: 50
+    data: {fileID: 11400000, guid: 346d2b355d9194899bac436ad6d4d372, type: 2}
+  - data_percentage: 20
+    data: {fileID: 11400000, guid: 72070bbb799e84473aeafdb18bc2087f, type: 2}
+  - data_percentage: 15
+    data: {fileID: 11400000, guid: 1c9142f50d2a3854f86091b2c7f3a54a, type: 2}
+  - data_percentage: 10
+    data: {fileID: 11400000, guid: 90bc803cab586be4c86fd3de4b623d2c, type: 2}
+  - data_percentage: 5
+    data: {fileID: 11400000, guid: 6b34f1e02ad894c499564486b0c4fee3, type: 2}
+  background_color: {r: 1, g: 1, b: 1, a: 1}

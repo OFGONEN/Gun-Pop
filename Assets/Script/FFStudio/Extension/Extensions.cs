@@ -12,6 +12,7 @@ namespace FFStudio
 	public static class Extensions
 	{
 		public static readonly string SAVE_PATH = Application.persistentDataPath + "/Saves/";
+		public static readonly string Key_Tutorial = "tutorial";
 
 		static List< Transform > baseModelBones   = new List< Transform >( 96 );
 		static List< Transform > targetModelBones = new List< Transform >( 96 );
@@ -54,12 +55,36 @@ namespace FFStudio
 			return sameColor;
 		}
 
+		public static void RemoveLastItem< T >( this List< T > list )
+		{
+			var lastIndex = list.Count - 1;
+			list.RemoveAt( lastIndex );
+		}
+
 		public static T ReturnLastItem< T >( this List< T > list )
 		{
 			var lastIndex = list.Count - 1;
 
 			T item = list[ lastIndex ];
 			list.RemoveAt( lastIndex );
+
+			return item;
+		}
+
+		public static T PeekLastItem< T >( this List< T > list )
+		{
+			var lastIndex = Mathf.Max( 0, list.Count - 1 );
+
+			T item = list[ lastIndex ];
+
+			return item;
+		}
+
+		public static T PeekPenultimateItem< T >( this List< T > list )
+		{
+			var lastIndex = Mathf.Max( 0, list.Count - 2 );
+
+			T item = list[ lastIndex ];
 
 			return item;
 		}

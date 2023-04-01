@@ -15,6 +15,16 @@ namespace FFStudio
 		[ ValueDropdown( "SceneList" ), LabelText( "Scene Index" ) ] public int scene_index;
         [ LabelText( "Override As Active Scene" ) ] public bool scene_overrideAsActiveScene;
 
+	[ Title( "Level" ) ]
+		[ LabelText( "Level Size " ) ] public Vector2Int level_size;
+		[ LabelText( "Move Count " ) ] public int level_moveCount;
+		[ LabelText( "Enemy Health" ) ] public int enemy_health;
+		[ LabelText( "Gun Color Data Percentage " ) ] public DataPercentageGunColorData[] data_gunColor_percentage_array;
+		[ LabelText( "Gun Data Percentage " ) ] public DataPercentageGunData[] data_gun_percentage_array;
+		
+	[ Title( "Graphics" ) ]
+		[ LabelText( "Background Color" ) ] public Color background_color = new Color( 83.0f / 255.0f, 150.0f / 255.0f, 212.0f / 255.0f );
+
 #if UNITY_EDITOR
 		static IEnumerable SceneList()
         {
@@ -29,4 +39,18 @@ namespace FFStudio
 		}
 #endif
     }
+}
+
+[ System.Serializable ]
+public struct DataPercentageGunColorData
+{
+	public int data_percentage;
+	public GunVisualData data;
+}
+
+[ System.Serializable ]
+public struct DataPercentageGunData
+{
+	public int data_percentage;
+	public GunData data;
 }

@@ -47,14 +47,13 @@ MonoBehaviour:
   eventPairs:
   - eventListener:
       gameEvents:
-      - {fileID: 11400000, guid: ec850936269bc2e47b26cfebd8bdad97, type: 2}
       - {fileID: 11400000, guid: 28d976b368abc004a924d98b1751a17d, type: 2}
     unityEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1995381484838036014}
-          m_TargetAssemblyTypeName: FFStudio.CameraFollow, Assembly-CSharp
-          m_MethodName: LevelFinishedResponse
+        - m_Target: {fileID: 4675455548452596176}
+          m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+          m_MethodName: Play
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -64,15 +63,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventListener:
-      gameEvents:
-      - {fileID: 11400000, guid: be5502ede7f194b4cad32082aa9196eb, type: 2}
-    unityEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1995381484838036014}
-          m_TargetAssemblyTypeName: FFStudio.CameraFollow, Assembly-CSharp
-          m_MethodName: LevelRevealedResponse
+        - m_Target: {fileID: 8799556595261078244}
+          m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+          m_MethodName: Play
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -82,6 +75,130 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1001 &4675455548467595820
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 9183828978397315748}
+    m_Modifications:
+    - target: {fileID: 195826, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_Name
+      value: ConfettiFountain_confetti_level_completed_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6830127
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6830127
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.18301275
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.18301275
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -120
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+--- !u!198 &4675455548452596176 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19866620, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+  m_PrefabInstance: {fileID: 4675455548467595820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8799556595241736472
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 9183828978397315748}
+    m_Modifications:
+    - target: {fileID: 195826, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_Name
+      value: ConfettiFountain_confetti_level_completed_right
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.18301275
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.18301275
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6830127
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.6830127
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -120
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 408764, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+--- !u!198 &8799556595261078244 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19866620, guid: 5d87a6043c67e344391db482eaf78c84, type: 3}
+  m_PrefabInstance: {fileID: 8799556595241736472}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8845214483687598547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89,6 +206,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 410672511804074871, guid: ed4a75596492d5941b007d11e01ab28a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253889938108595587, guid: ed4a75596492d5941b007d11e01ab28a, type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253889938108595587, guid: ed4a75596492d5941b007d11e01ab28a, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 3747325266785291020, guid: ed4a75596492d5941b007d11e01ab28a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -149,19 +278,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1457058443166520362, guid: ed4a75596492d5941b007d11e01ab28a, type: 3}
   m_PrefabInstance: {fileID: 8845214483687598547}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1995381484838036014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7996142625926839801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bb1e6ed2b00bf54481887a02ec8fad7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notifier_reference_transform_target: {fileID: 11400000, guid: 488e798dd6f140e4a84fa7485b885dd3, type: 2}
 --- !u!114 &7066980022146641310
 MonoBehaviour:
   m_ObjectHideFlags: 0

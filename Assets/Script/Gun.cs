@@ -131,7 +131,8 @@ public class Gun : MonoBehaviour
 		);
 
 		sequence.Append( transform.DOShakePosition(
-			GameSettings.Instance.gun_fire_shake_duration )
+			GameSettings.Instance.gun_fire_shake_duration,
+			GameSettings.Instance.gun_fire_shake_power )
 			.SetEase( GameSettings.Instance.gun_fire_shake_ease )
 			.SetLoops( GameSettings.Instance.gun_fire_shake_count_range.ReturnRandom(), LoopType.Yoyo )
 			.OnStepComplete( OnGunFireStep )

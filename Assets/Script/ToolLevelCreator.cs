@@ -10,6 +10,7 @@ using UnityEditor;
 
 public class ToolLevelCreator : SerializedMonoBehaviour
 {
+#if UNITY_EDITOR
 #region Fields
   [ Title( "Setup" ) ]
 	[ SerializeField ] Anchor anchor_prefab;
@@ -109,7 +110,6 @@ public class ToolLevelCreator : SerializedMonoBehaviour
 #endregion
 
 #region Editor Only
-#if UNITY_EDITOR
 	private static bool DrawCell( Rect rect, bool value )
 	{
 		if( Event.current.type == EventType.MouseDown && rect.Contains( Event.current.mousePosition ) )
@@ -127,6 +127,6 @@ public class ToolLevelCreator : SerializedMonoBehaviour
 
         return value;
 	}
-#endif
 #endregion
+#endif
 }

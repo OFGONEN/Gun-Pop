@@ -9,10 +9,20 @@ using Sirenix.OdinInspector;
 public class Enemy : MonoBehaviour
 {
 #region Fields
-  [ Title( "Setup" ) ]
+  [ Title( "Shared" ) ]
     [ SerializeField ] SharedFloatNotifier notif_level_progress;
+    [ SerializeField ] SharedVector3Notifier notif_enemy_fire_position;
     [ SerializeField ] GameEvent event_enemy_damaged;
     [ SerializeField ] GameEvent event_enemy_died;
+
+  [ Title( "Setup" ) ]
+    [ SerializeField ] Material enemy_material_idle;
+    [ SerializeField ] Material enemy_material_damaged;
+    [ SerializeField ] Material enemy_material_dead;
+
+  [ Title( "Components" ) ]
+	[ SerializeField ] MeshRenderer enemy_body_renderer;
+	[ SerializeField ] MeshRenderer enemy_crown_renderer;
 
     int health_current;
 #endregion

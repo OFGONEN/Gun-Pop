@@ -68,7 +68,7 @@ public class Gun : MonoBehaviour
 	public void DoMerge( Gun target, UnityMessage onMergeDone )
 	{
 		var targetPosition = target.transform.position;
-		var targetScale    = transform.localScale + Vector3.one * GameSettings.Instance.merge_size_step;
+		var targetScale    = Vector3.one * Mathf.Min( GameSettings.Instance.merge_size_final, transform.localScale.x + GameSettings.Instance.merge_size_step );
 
 		var sequence = recycledSequence.Recycle( onMergeDone );
 		sequence.Append( transform.DOMoveX(

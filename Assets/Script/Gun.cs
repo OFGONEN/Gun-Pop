@@ -22,8 +22,8 @@ public class Gun : MonoBehaviour
     [ SerializeField ] MeshFilter gun_mesh_filter;
     [ SerializeField ] MeshRenderer gun_mesh_renderer;
 
-    GunData gun_data;
-    GunVisualData gun_visual_data;
+    [ ShowInInspector ] GunData gun_data;
+    [ ShowInInspector ] GunVisualData gun_visual_data;
     Anchor gun_anchor;
 
 	RecycledTween    recycledTween    = new RecycledTween();
@@ -159,6 +159,7 @@ public class Gun : MonoBehaviour
 		event_particle_spawn.Raise( "gun_fire", transform.position + gun_data.gun_fire_pfx_offset * GameSettings.Instance.merge_size_final, transform );
 	}
 
+    [ Button() ]
     void UpdateVisual()
     {
 		var visualData = gun_visual_data.gun_model_data_array[ Mathf.Clamp( gun_data.gun_level - 1, 0, gun_visual_data.gun_model_data_array.Length - 1 ) ];

@@ -43,8 +43,6 @@ public class Enemy : MonoBehaviour
 
 		enemy_position_start = transform.position;
 	}
-
-
 #endregion
 
 #region API
@@ -80,6 +78,8 @@ public class Enemy : MonoBehaviour
 	{
 		enemy_body_renderer.sharedMaterial  = enemy_material_dead;
 		enemy_crown_renderer.sharedMaterial = enemy_material_dead;
+
+		recycledTween.Recycle( GameSettings.Instance.enemy_damage_punchScale.CreateTween( enemy_gfx_transform ) );
 
 		event_enemy_died.Raise();
 	}

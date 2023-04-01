@@ -10,7 +10,8 @@ public class GunData : ScriptableObject
 #region Fields
     public int gun_level;
     public int gun_damage;
-    public GunData gun_nextData;
+	public Vector3 gun_fire_pfx_offset;
+	public GunData gun_nextData;
 #endregion
 
 #region Properties

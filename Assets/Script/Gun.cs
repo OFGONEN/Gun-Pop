@@ -150,7 +150,7 @@ public class Gun : MonoBehaviour
 
 	void OnGunFireStep()
 	{
-		FFLogger.Log( "Gun Fired", this );
+		event_particle_spawn.Raise( "gun_fire", transform.position + gun_data.gun_fire_pfx_offset, transform );
 	}
 
     void UpdateVisual()

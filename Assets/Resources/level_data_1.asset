@@ -15,7 +15,7 @@ MonoBehaviour:
   scene_index: 1
   scene_overrideAsActiveScene: 0
   level_size: {x: 2, y: 2}
-  level_moveCount: 3
+  level_moveCount: 9999999
   enemy_health: 3
   data_gunColor_percentage_array:
   - data_percentage: 100

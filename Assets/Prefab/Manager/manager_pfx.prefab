@@ -128,4 +128,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools_pfx:
   - {fileID: 11400000, guid: e39a9ba4a17814207a8c68b2dbc49ca6, type: 2}
+  - {fileID: 11400000, guid: 2bb5e764b63bf4e35af838107337422b, type: 2}
   pools_pfx_random: []

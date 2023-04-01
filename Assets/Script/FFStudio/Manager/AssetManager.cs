@@ -51,7 +51,12 @@ namespace FFStudio
 #region API
 		public void VibrateAPI( IntGameEvent vibrateEvent )
 		{
-			switch ( vibrateEvent.eventValue )
+			Vibrate( vibrateEvent.eventValue );
+		}
+
+		public void Vibrate( int vibrate )
+		{
+			switch( vibrate )
 			{
 				case 0:
 					Vibration.VibratePeek();

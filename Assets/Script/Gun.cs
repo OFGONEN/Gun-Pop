@@ -15,6 +15,7 @@ public class Gun : MonoBehaviour
     [ SerializeField ] SharedVector3Notifier notif_gun_fire_position;
 	[ SerializeField ] GameEvent event_gun_fire_start;
 	[ SerializeField ] IntGameEvent event_gun_fired;
+	[ SerializeField ] IntGameEvent event_vibrate;
 	[ SerializeField ] ParticleSpawnEvent event_particle_spawn;
 
   [ Title( "Components" ) ]
@@ -108,6 +109,8 @@ public class Gun : MonoBehaviour
 	{
 		gun_data = gun_data.gun_nextData;
 		event_particle_spawn.Raise( "gun_upgrade", transform.position );
+		event_vibrate.Raise( 0 );
+
 		UpdateVisual();
 	}
 

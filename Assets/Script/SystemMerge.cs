@@ -41,6 +41,7 @@ public class SystemMerge : ScriptableObject
 		merge_index = 1;
 		merge_gun   = set_gun.itemList[ 0 ];
 
+		merge_gun.StartMerge();
 		merge_gun.DoMerge( set_gun.itemList[ merge_index ], OnMergeDone );
 		event_selection_line_despawn.Raise();
 	}

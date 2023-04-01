@@ -68,7 +68,7 @@ MonoBehaviour:
   angUnitInput: 1
   angRadiansStart: 0
   angRadiansEnd: 2.3561945
-  radius: 1
+  radius: 0.4
   radiusSpace: 0
   thickness: 0.5
   thicknessSpace: 0
@@ -240,6 +240,24 @@ MonoBehaviour:
         - m_Target: {fileID: 2171070309511039850}
           m_TargetAssemblyTypeName: Anchor, Assembly-CSharp
           m_MethodName: OnLevelStart
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventListener:
+      gameEvents:
+      - {fileID: 11400000, guid: 3a4a42a0ff68e48df94c547e2966293a, type: 2}
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2171070309511039850}
+          m_TargetAssemblyTypeName: Anchor, Assembly-CSharp
+          m_MethodName: SpawnGun
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

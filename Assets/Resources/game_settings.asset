@@ -14,9 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selection_layer: 31
   selection_delta: 100
+  gun_fire_move_duration: 0.25
+  gun_fire_move_ease: 12
+  gun_spawn_punchScale:
+    strength: {x: 0.1, y: 0.1, z: 0.1}
+    duration: 0.3
+    vibrato: 10
+    elasticity: 1
+    ease: 12
   merge_count: 3
-  merge_jump_power: 0.1
+  merge_size_final: 2
+  merge_size_step: 0.1
+  merge_jump_power: 1.5
   merge_jump_duration: 0.25
+  merge_jump_delay: 0.025
   merge_jump_ease: 12
   camera_follow_speed_depth: 2.8
   game_level_count_max: 1

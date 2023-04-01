@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun_level: 3
   gun_damage: 3
+  gun_fire_pfx_offset: {x: 0.7, y: 0.15, z: 0}
   gun_nextData: {fileID: 11400000, guid: 90bc803cab586be4c86fd3de4b623d2c, type: 2}

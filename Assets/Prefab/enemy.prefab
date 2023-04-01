@@ -53,6 +53,7 @@ MonoBehaviour:
   enemy_material_idle: {fileID: 2100000, guid: 35689d2b8d8ea9a4ea4bd26fbb3ae840, type: 2}
   enemy_material_damaged: {fileID: 2100000, guid: ed6db61284e9eb940822a000ed9e47e2, type: 2}
   enemy_material_dead: {fileID: 2100000, guid: fc4b2314c32de7b49ad695ad1f9dc52b, type: 2}
+  enemy_gfx_transform: {fileID: 4689335115718226887}
   enemy_body_renderer: {fileID: 7836130837974837703}
   enemy_crown_renderer: {fileID: 4694187778114585149}
 --- !u!1 &4463479585434952861
@@ -132,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respond_data_array:
+  - rid: 6937256501312749568
   - rid: 5382518048207405056
   references:
     version: 2
@@ -148,7 +150,29 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 3485343731542069932}
               m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
-              m_MethodName: OnGunFire
+              m_MethodName: OnGunFired
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+    - rid: 6937256501312749568
+      type: {class: BasicGameEventResponse, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        isEnabled: 1
+        isDelayed: 0
+        delayDuration: 0
+        gameEvent: {fileID: 11400000, guid: 58502bee5c1694247a40cd44144ff0da, type: 2}
+        unityEvent:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 3485343731542069932}
+              m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+              m_MethodName: OnGunFireStart
               m_Mode: 0
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}

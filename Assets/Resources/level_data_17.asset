@@ -33,3 +33,4 @@ MonoBehaviour:
     data: {fileID: 11400000, guid: 1c9142f50d2a3854f86091b2c7f3a54a, type: 2}
   - data_percentage: 5
     data: {fileID: 11400000, guid: 90bc803cab586be4c86fd3de4b623d2c, type: 2}
+  background_color: {r: 0.83137256, g: 0.78456056, b: 0.32549018, a: 1}

@@ -25,3 +25,4 @@ MonoBehaviour:
   data_gun_percentage_array:
   - data_percentage: 100
     data: {fileID: 11400000, guid: 346d2b355d9194899bac436ad6d4d372, type: 2}
+  background_color: {r: 0.32549018, g: 0.80525696, b: 0.83137256, a: 1}

@@ -139,6 +139,11 @@ public class Gun : MonoBehaviour
 
 		sequence.AppendInterval( GameSettings.Instance.gun_fire_sequence_end_delay );
 	}
+
+	public void OnLevelUnloadStart()
+	{
+		pool_gun.ReturnEntity( this );
+	}
 #endregion
 
 #region Implementation

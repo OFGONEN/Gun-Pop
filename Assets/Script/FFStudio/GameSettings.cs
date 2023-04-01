@@ -17,7 +17,11 @@ namespace FFStudio
     [ Title( "Gun" ) ]
 		[ LabelText( "Gun Fire Position Move Duration" ) ] public float gun_fire_move_duration;
 		[ LabelText( "Gun Fire Position Move Ease" ) ] public Ease gun_fire_move_ease;
-		[ LabelText( "Gun Fire Position Move Ease" ) ] public PunchScaleTween gun_spawn_punchScale;
+		[ LabelText( "Gun Fire Position Shake Duration" ) ] public float gun_fire_shake_duration;
+		[ LabelText( "Gun Fire Position Shake Ease" ) ] public Ease gun_fire_shake_ease;
+		[ LabelText( "Gun Fire Position Shake Loop Count Range" ) ] public Vector2Int gun_fire_shake_count_range;
+		[ LabelText( "Gun Fire Sequence End Delay" ) ] public float gun_fire_sequence_end_delay;
+		[ LabelText( "Gun Spawn Punch Scale" ) ] public PunchScaleTween gun_spawn_punchScale;
 
     [ Title( "Merge" ) ]
 		[ LabelText( "Merge Min Count" ) ] public int merge_count;

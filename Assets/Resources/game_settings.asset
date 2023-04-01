@@ -16,6 +16,10 @@ MonoBehaviour:
   selection_delta: 100
   gun_fire_move_duration: 0.25
   gun_fire_move_ease: 12
+  gun_fire_shake_duration: 0.2
+  gun_fire_shake_ease: 12
+  gun_fire_shake_count_range: {x: 1, y: 3}
+  gun_fire_sequence_end_delay: 0.2
   gun_spawn_punchScale:
     strength: {x: 0.1, y: 0.1, z: 0.1}
     duration: 0.3

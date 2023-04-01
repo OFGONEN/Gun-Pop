@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d5d34c8a17542209096003a721a5f6, type: 3}
+  m_Name: gun_model_data_gray
+  m_EditorClassIdentifier: 
+  gun_model_color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
+  gun_model_data_array:
+  - gun_model_mesh: {fileID: -8579701109826704336, guid: ff3d5d612e46dad49802f75c36816971, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: 5825222809254733785, guid: fea05d709afc1ff43b0e215bdcc7f1ac, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: -9159771304650794966, guid: 2922d010e07cf764aaf3c4f8b6165eee, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: -6844597915443157636, guid: 3e09d284b0ac8aa48a6c8822645001b1, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: 582913072136486332, guid: b496bb09b8bf6f04884e36e9a20c8792, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: -127835801136068640, guid: 925806cfc34571845b381c4aaefa8b1a, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: -4259164853220075834, guid: a5a354eb5ee2b324d884250f4642a907, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: 7632249017769506340, guid: 355009bcf7c92b44ab314d9fd6d506d2, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: 8596276994516523961, guid: 7f24a3a9f0d99c54ea0e54ce3a203902, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  - gun_model_mesh: {fileID: -6052818575588831594, guid: fb6ad93a23cf0184fa6b4cf966ac7027, type: 3}
+    gun_model_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}

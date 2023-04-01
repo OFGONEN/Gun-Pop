@@ -9,7 +9,9 @@ namespace FFStudio
 	public class ColorSetter : MonoBehaviour
 	{
 #region Fields
-		[ TitleGroup( "Setup" ), SerializeField ] Color color;
+	[ Title( "Setup" ) ]
+		[ SerializeField ] bool setFromLevelData;
+		[ SerializeField, HideIf( "setFromLevelData" ) ] Color color;
 
 		static int SHADER_ID_COLOR = Shader.PropertyToID( "_BaseColor" );
 
@@ -26,6 +28,12 @@ namespace FFStudio
 			theRenderer = GetComponent< Renderer >();
 
 			propertyBlock = new MaterialPropertyBlock();
+		}
+		
+		void Start()
+		{
+			if( setFromLevelData )
+				SetColor( CurrentLevelData.Instance.levelData.background_color );
 		}
 #endregion
 

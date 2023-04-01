@@ -10,9 +10,15 @@ namespace FFStudio
     {
 		public int setSize;
 		[ ShowInInspector ]
-		public List< TValue > itemList = new List< TValue >();
+		public List< TValue > itemList;
 		[ ShowInInspector ]
-		public Dictionary< TKey, TValue > itemDictionary = new Dictionary< TKey, TValue >();
+		public Dictionary< TKey, TValue > itemDictionary;
+
+		public void Init()
+		{
+			itemList       = new List< TValue >( setSize );
+			itemDictionary = new Dictionary< TKey, TValue >( setSize );
+		}
 
 		public void AddList( TValue value )
 		{

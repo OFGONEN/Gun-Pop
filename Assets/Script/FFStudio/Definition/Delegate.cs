@@ -14,5 +14,10 @@ namespace FFStudio
 	public delegate void UnityMessage();
 	public delegate void OnCompleteMessage();
 	public delegate void LeanFingerDelegate( LeanFinger finger );
+	public delegate void Vector2Delegate( Vector2 vector );
+	public delegate void Vector3Delegate( Vector3 vector );
 	public delegate void ParticleEffectStopped( ParticleEffect effect );
+
+	//Game
+	public delegate void RaycastHitDataMessage( RaycastHitData data );
 }

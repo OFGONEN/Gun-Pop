@@ -134,6 +134,7 @@ public class Gun : MonoBehaviour
 			GameSettings.Instance.gun_fire_shake_duration )
 			.SetEase( GameSettings.Instance.gun_fire_shake_ease )
 			.SetLoops( GameSettings.Instance.gun_fire_shake_count_range.ReturnRandom(), LoopType.Yoyo )
+			.OnStepComplete( OnGunFireStep )
 		);
 
 		sequence.AppendInterval( GameSettings.Instance.gun_fire_sequence_end_delay );
@@ -145,6 +146,11 @@ public class Gun : MonoBehaviour
 	{
 		pool_gun.ReturnEntity( this );
 		event_gun_fired.Raise();
+	}
+
+	void OnGunFireStep()
+	{
+		FFLogger.Log( "Gun Fired", this );
 	}
 
     void UpdateVisual()
